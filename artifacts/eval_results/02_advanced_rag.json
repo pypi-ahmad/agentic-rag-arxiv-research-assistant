@@ -1,0 +1,15 @@
+{
+  "experiment_name": "advanced_rag",
+  "retriever_type": "bm25_improved",
+  "embed_model": "qwen3-embedding:0.6b",
+  "llm_model": "granite4.1:8b",
+  "retrieval_metrics": {
+    "recall@5": 0.3667,
+    "precision@5": 0.19,
+    "mrr": 0.4408,
+    "k": 5,
+    "n_queries": 20
+  },
+  "generation_metrics": {},
+  "notes": "BM25 with improved tokenisation (lowercase + punctuation strip + stop words). Best single-retriever strategy on 20q eval set. See lesson cell for full comparison table."
+}

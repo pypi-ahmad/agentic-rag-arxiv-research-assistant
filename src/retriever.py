@@ -16,12 +16,44 @@ Why four classes instead of one?
 
 from __future__ import annotations
 
+import re
 import numpy as np
 from loguru import logger
 from rank_bm25 import BM25Okapi
 from sentence_transformers import CrossEncoder
 
 from src.ingest import embed_query, EMBED_MODEL_PRIMARY
+
+
+# ── BM25 tokenisation helpers ─────────────────────────────────────────────────
+#
+# IMPROVEMENT 3 (see notebook 02 for full explanation and before/after metrics):
+#
+# OLD approach — whitespace split only:
+#   tokens = text.lower().split()
+# Problems:
+#   • "Transformer" and "transformer" were different tokens (case mismatch)
+#   • Stop words ("the", "is", "of") consumed scoring budget — they appear in
+#     every document with high tf but near-zero IDF, contributing almost nothing
+#   • Punctuation was kept: "attention." ≠ "attention"
+#
+# NEW approach — lowercase + strip punctuation + remove stop words:
+
+BM25_STOP_WORDS: frozenset[str] = frozenset({
+    "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
+    "have", "has", "had", "do", "does", "did", "will", "would", "could",
+    "should", "may", "might", "shall", "can", "of", "in", "on", "at",
+    "to", "for", "with", "by", "from", "as", "this", "that", "these",
+    "those", "it", "its", "we", "our", "they", "their", "which", "who",
+    "and", "or", "but", "not", "no", "nor", "so", "yet", "both", "each",
+    "about", "than", "more", "also", "such", "into", "its", "over",
+})
+
+
+def _tokenise(text: str) -> list[str]:
+    """Lowercase, strip non-alphanumeric chars, remove stop words and single-char tokens."""
+    tokens = re.sub(r"[^a-z0-9]", " ", text.lower()).split()
+    return [t for t in tokens if t not in BM25_STOP_WORDS and len(t) > 1]
 
 
 # ── 1. Dense retriever (semantic / embedding-based) ───────────────────────────
@@ -114,8 +146,13 @@ class BM25Retriever:
 
     def __init__(self, chunks: list[dict]) -> None:
         self.chunks = chunks
-        # Tokenise: lowercase, split on whitespace — simple but effective
-        tokenised_corpus = [chunk["text"].lower().split() for chunk in chunks]
+
+        # OLD tokenisation (whitespace only — kept for reference):
+        # tokenised_corpus = [chunk["text"].lower().split() for chunk in chunks]
+
+        # IMPROVED tokenisation (lowercase + strip punctuation + stop words):
+        # See _tokenise() above for the full explanation.
+        tokenised_corpus = [_tokenise(chunk["text"]) for chunk in chunks]
         self.bm25 = BM25Okapi(tokenised_corpus)
         logger.info(f"Built BM25 index over {len(chunks)} chunks.")
 
@@ -131,7 +168,9 @@ class BM25Retriever:
             List of chunk dicts sorted by BM25 score, each with a "score" key.
             Scores are raw BM25 values (not normalised to 0–1).
         """
-        query_tokens = query.lower().split()
+        # OLD: query_tokens = query.lower().split()
+        # IMPROVED: same tokeniser as the corpus — must match for consistent scoring
+        query_tokens = _tokenise(query)
         scores = self.bm25.get_scores(query_tokens)
 
         # Get indices of top-k scores

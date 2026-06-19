@@ -1,0 +1,15 @@
+{
+  "experiment_name": "naive_rag",
+  "retriever_type": "dense_faiss",
+  "embed_model": "qwen3-embedding:0.6b",
+  "llm_model": "granite4.1:8b",
+  "retrieval_metrics": {
+    "recall@5": 0.25,
+    "precision@5": 0.12,
+    "mrr": 0.2992,
+    "k": 5,
+    "n_queries": 20
+  },
+  "generation_metrics": {},
+  "notes": "Baseline: FAISS IndexFlatIP with L2-normalised qwen3-embedding:0.6b vectors"
+}

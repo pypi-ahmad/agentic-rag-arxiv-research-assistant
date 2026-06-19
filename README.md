@@ -14,7 +14,7 @@ Every concept is explained from scratch. No prior RAG or LangGraph experience is
 ## Overview
 
 **What it does:**  
-Builds a Q&A system over ~2000 ArXiv ML/AI paper abstracts that correctly answers questions like "What is retrieval-augmented generation?", "How does RLHF work?", and "What are the key differences between LoRA and full fine-tuning?"
+Builds a Q&A system over 600 ArXiv ML/AI paper abstracts (cs.CL, cs.AI, cs.LG) that correctly answers questions like "What is retrieval-augmented generation?", "How does RLHF work?", and "What are the key differences between LoRA and full fine-tuning?"
 
 **Why it exists:**  
 RAG is now one of the most widely deployed patterns in production AI systems, yet most tutorials stop at the naive pipeline. This project teaches the full progression — including why naive RAG fails, how hybrid retrieval fixes it, and how LangGraph enables self-correcting agentic behaviour. Every step is tied to a measurable metric improvement.
@@ -83,16 +83,16 @@ uv --version
 ### Phase A — Indexing (run once in notebook 01)
 
 ```
-ArXiv papers (ccdv/arxiv-summarization)
+ArXiv papers (arxiv.org API, falls back to ccdv/arxiv-summarization on HuggingFace)
       │
-      ▼  load_arxiv_papers()
-Filter to cs.CL, cs.AI, cs.LG  (~2000 papers)
+      ▼  load_arxiv_papers(n_samples=600)
+Filter to cs.CL, cs.AI, cs.LG  (600 papers)
       │
       ▼  chunk_documents()
-Overlapping 512-char chunks with 64-char overlap  (~4000 chunks)
+Overlapping 512-char chunks with 64-char overlap  (~2100 chunks)
       │
       ▼  embed_texts()
-qwen3-embedding:4b  →  float32 matrix (4000 × 4096), L2-normalised
+qwen3-embedding:0.6b  →  float32 matrix (2100 × 1024), L2-normalised
       │
       ▼  build_faiss_index()
 FAISS IndexFlatIP  (exact inner product search)
@@ -131,9 +131,9 @@ START ──► [retrieve]
               ▼
          [grade_documents]  ←── LLM judges relevance of each chunk
               │
-              ├── retrieval_grade = "relevant" ─────────────────────────────┐
+              ├── retrieval_grade = "relevant" (≥1 relevant doc) ──────────┐
               │                                                              │
-              └── retrieval_grade = "ambiguous"/"irrelevant"                │
+              └── retrieval_grade = "irrelevant" (0 relevant docs)          │
                         │                                                    │
                         ▼                                                    │
                   [web_search]  ←── DuckDuckGo fallback                     │
@@ -164,7 +164,7 @@ START ──► [retrieve]
 
 **Name:** [ccdv/arxiv-summarization](https://huggingface.co/datasets/ccdv/arxiv-summarization)  
 **Source:** HuggingFace Hub (publicly available, no login required)  
-**Total papers:** ~116K (we use a 2000-paper filtered subset)
+**Total papers:** ~116K (we use a 600-paper subset — fetched from arxiv.org API, HuggingFace fallback if offline)
 
 ### Why ArXiv ML/AI papers?
 
@@ -183,11 +183,11 @@ The corpus is self-referential in a useful way — we're building a RAG system a
 
 ### Preprocessing
 
-1. Download 3000 rows from the `train` split
-2. Filter by category string (keep rows containing cs.CL, cs.AI, or cs.LG)
-3. Extract: `id`, `title`, `abstract`, `category`
-4. Chunk abstracts: 512-char windows, 64-char overlap → ~4000 chunks
-5. Embed with qwen3-embedding:4b, L2-normalise → FAISS IndexFlatIP
+1. Fetch 600 recent papers from arxiv.org API (cs.CL, cs.AI, cs.LG); falls back to HuggingFace if rate-limited
+2. Filter: skip abstracts shorter than 80 characters
+3. Extract: `id`, `title`, `abstract`, `category`, `url`
+4. Chunk abstracts: 512-char windows, 64-char overlap → ~2100 chunks
+5. Embed with qwen3-embedding:0.6b (1024-dim), L2-normalise → FAISS IndexFlatIP
 
 ---
 
@@ -354,37 +354,51 @@ agentic-rag-arxiv-research-assistant/
 
 ## Results
 
-### Retrieval comparison (Recall@5, Precision@5, MRR on 5 eval queries)
+All numbers below are from the final runs with **600 papers, 20-query evaluation set, multi-keyword OR ground truth** — a harder and more realistic benchmark than the 5-query single-keyword eval used in early runs.
+
+### Retrieval comparison (Recall@5, Precision@5, MRR — 20 eval queries, 600-paper corpus)
 
 | Strategy | Recall@5 | Precision@5 | MRR | Notes |
 |----------|---------|------------|-----|-------|
-| Dense only (qwen3-embedding:4b) | 0.68 | 0.34 | 0.71 | Baseline; strong on semantic queries |
-| Dense only (qwen3-embedding:0.6b) | 0.52 | 0.26 | 0.55 | −24% Recall vs. 4b — visible quality gap |
-| BM25 only | 0.44 | 0.22 | 0.48 | Better than 0.6b on keyword queries; worse on paraphrase |
-| Hybrid α=0.7 | 0.76 | 0.38 | 0.78 | +12% Recall vs. dense-only baseline |
-| Hybrid + Rerank | **0.84** | **0.46** | **0.87** | Best overall; reranking lifts MRR most |
+| Dense only — `qwen3-embedding:0.6b` | 0.250 | 0.120 | 0.299 | Baseline; notebook 01 |
+| BM25 improved tokenisation | **0.367** | **0.190** | **0.441** | Best single retriever; +47% MRR over dense |
+| Hybrid α=0.7 | 0.267 | 0.130 | 0.308 | Alpha fusion hurt vs BM25 alone on this corpus |
+| Hybrid RRF | 0.267 | 0.130 | 0.287 | RRF rank-fusion; scale-agnostic but lost score signal |
+| Hybrid RRF + Rerank | 0.333 | 0.170 | 0.363 | Cross-encoder reranking gave biggest individual jump (+0.075 MRR) |
 
-> Results are indicative. Actual numbers depend on the random seed used for the 3000-row dataset slice and the Ollama model version. Re-run the ablation cells to reproduce.
+> **Why are numbers lower than tutorials with 5 queries?** The 5-query single-keyword benchmark produced inflated scores (0.53–0.67 recall) because of minimal distractors and trivially narrow ground truth. The 20-query multi-keyword eval is harder — more papers means more noise, more diverse queries expose edge cases. Lower absolute numbers on a harder eval is the honest result.
 
-### Agentc RAG execution statistics (on 5 eval queries)
+### Agentic CRAG execution statistics (10 eval queries, 600-paper corpus)
 
-| Metric | Value |
-|--------|-------|
-| Queries where corpus docs were relevant | 4/5 (80%) |
-| Queries that triggered web search | 1/5 (20%) |
-| Faithful answers (no hallucination detected) | 5/5 (100%) |
-| Queries requiring regeneration | 0/5 |
-| Average agent latency | ~12s per query |
-| Pipeline RAG latency | ~4s per query |
+| Metric | Before improvements | After improvements |
+|--------|--------------------|--------------------|
+| Queries | 5 | 10 |
+| Corpus docs relevant | 4/5 (80%) | **10/10 (100%)** |
+| Web search triggered | 1/5 (20%) | **0/10 (0%)** |
+| Faithful answers | 3/5 (60%) | **7/10 (70%)** |
+| Avg agent latency | ~12s/query | ~15s/query |
+| Pipeline RAG latency | ~200ms/query | ~200ms/query |
 
-> The 3× latency cost of the agent comes from two LLM grading calls (grade_documents + grade_hallucination). This is the price of reliability — for latency-sensitive applications, grading can be disabled or replaced with a lightweight classifier.
+> The 0% web search rate (vs 20% before) is the direct result of Improvement 5 — the 2-tier threshold (1 relevant doc is enough) replaced the old 3-tier threshold that treated single-doc matches as "ambiguous" and sent them to web search unnecessarily.
+
+### Improvements summary
+
+Five improvements were implemented across the notebooks. Each has the old code commented out alongside the new code with an explanation of what changed, why, and the result difference.
+
+| # | What changed | Where | Result |
+|---|---|---|---|
+| 1 | Corpus 300 → 600 papers | NB01, NB02, NB03 | More coverage; rarer topics now have ground truth hits |
+| 2 | Eval set 5q → 20q, multi-keyword OR ground truth | NB01, NB02, NB03 | Realistic benchmark; inflated 0.67 MRR → honest 0.299 baseline |
+| 3 | BM25 tokenisation: whitespace → lowercase+punct strip+stop words | `src/retriever.py` | MRR 0.299 → 0.441 (+47% over dense baseline) |
+| 4 | Score fusion: alpha blend → RRF option | `src/retriever.py` | RRF available but alpha marginally better on this corpus |
+| 5 | CRAG threshold: 3-tier (≥2 relevant) → 2-tier (≥1 relevant) | NB03 | Web search 20% → 0%; faithfulness 60% → 70% |
 
 ### Embedding model comparison
 
-| Model | Recall@5 | VRAM | Embed time (4000 chunks) |
+| Model | Recall@5 (20q) | VRAM | Embed time (~2100 chunks) |
 |-------|---------|------|--------------------------|
-| qwen3-embedding:4b | 0.68 | 2.5 GB | ~8 min (RTX 4060) |
-| qwen3-embedding:0.6b | 0.52 | 639 MB | ~2 min |
+| qwen3-embedding:0.6b | 0.250 | 639 MB | ~2 min (RTX 4060) |
+| qwen3-embedding:4b | not run (VRAM constraint) | 2.5 GB | ~8 min est. |
 
 ---
 

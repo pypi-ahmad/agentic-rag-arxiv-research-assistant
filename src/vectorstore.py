@@ -150,17 +150,18 @@ class ChromaVectorStore(VectorStore):
         result = self._collection.query(
             query_embeddings=[query_vec],
             n_results=min(k, self.count()),
-            include=["documents", "metadatas", "distances"],
+            include=["ids", "documents", "metadatas", "distances"],
         )
 
         chunks = []
-        for doc, meta, dist in zip(
+        for cid, doc, meta, dist in zip(
+            result["ids"][0],
             result["documents"][0],
             result["metadatas"][0],
             result["distances"][0],
         ):
             chunk = {
-                "chunk_id":  meta.get("chunk_id", ""),
+                "chunk_id":  cid,
                 "paper_id":  meta["paper_id"],
                 "title":     meta["title"],
                 "category":  meta["category"],

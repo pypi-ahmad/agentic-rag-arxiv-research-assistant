@@ -1,0 +1,168 @@
+site_name: Agentic RAG — Zero to Hero
+site_description: >-
+  A complete tutorial on Retrieval-Augmented Generation (RAG) —
+  from first principles to a production-grade agentic pipeline with LangGraph,
+  applied to 2 000 ArXiv ML/AI research papers. Fully local, no cloud APIs required.
+site_author: Ahmad (pypi-ahmad)
+site_url: https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/
+
+repo_name: pypi-ahmad/agentic-rag-arxiv-research-assistant
+repo_url: https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/book-open-page-variant
+  favicon: https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/book/materialsymbolsoutlined/book_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+    - What Is This Project: 01_getting_started/what_is_this_project.md
+    - Prerequisites: 01_getting_started/prerequisites.md
+    - Installation: 01_getting_started/installation.md
+    - How to Use This Tutorial: 01_getting_started/how_to_use.md
+
+  - Core Concepts:
+    - What Is RAG: 02_core_concepts/what_is_rag.md
+    - Embeddings & Similarity: 02_core_concepts/embeddings.md
+    - Vector Databases: 02_core_concepts/vector_databases.md
+    - BM25 — Keyword Retrieval: 02_core_concepts/bm25_sparse_retrieval.md
+    - Hybrid Search: 02_core_concepts/hybrid_search.md
+    - Cross-Encoder Reranking: 02_core_concepts/reranking.md
+    - Evaluation Metrics: 02_core_concepts/evaluation_metrics.md
+    - Agentic AI & LangGraph: 02_core_concepts/agentic_ai_langgraph.md
+
+  - Part 1 — Naive RAG:
+    - Overview: 03_part1_naive_rag/overview.md
+    - Loading the Dataset: 03_part1_naive_rag/loading_data.md
+    - Chunking Documents: 03_part1_naive_rag/chunking.md
+    - Embedding & Indexing: 03_part1_naive_rag/embedding_indexing.md
+    - Retrieval & Generation: 03_part1_naive_rag/retrieval_generation.md
+    - Evaluation: 03_part1_naive_rag/evaluation.md
+    - Results & Limitations: 03_part1_naive_rag/results_and_limits.md
+
+  - Part 2 — Advanced RAG:
+    - Overview: 04_part2_advanced_rag/overview.md
+    - BM25 in Practice: 04_part2_advanced_rag/bm25_in_practice.md
+    - Hybrid Retrieval: 04_part2_advanced_rag/hybrid_retrieval.md
+    - Cross-Encoder Reranking: 04_part2_advanced_rag/cross_encoder_reranking.md
+    - Evaluation: 04_part2_advanced_rag/evaluation.md
+    - Results & Limitations: 04_part2_advanced_rag/results_and_limits.md
+
+  - Part 3 — Agentic RAG:
+    - Overview: 05_part3_agentic_rag/overview.md
+    - LangGraph Basics: 05_part3_agentic_rag/langgraph_basics.md
+    - CRAG Architecture: 05_part3_agentic_rag/crag_architecture.md
+    - LLM as Judge: 05_part3_agentic_rag/llm_as_judge.md
+    - Web Search Fallback: 05_part3_agentic_rag/web_search_fallback.md
+    - Grading Threshold Improvement: 05_part3_agentic_rag/threshold_improvement.md
+    - Evaluation: 05_part3_agentic_rag/evaluation.md
+    - Results & Limitations: 05_part3_agentic_rag/results_and_limits.md
+
+  - Results & Improvements:
+    - Full Benchmark Table: 07_results/benchmark_table.md
+    - All 5 Improvements Explained: 07_results/improvements_explained.md
+    - Reading the Numbers Honestly: 07_results/reading_the_numbers.md
+
+  - Reference:
+    - Glossary: 08_reference/glossary.md
+    - src/ingest.py: 08_reference/src_ingest.md
+    - src/retriever.py: 08_reference/src_retriever.md
+    - src/evaluator.py: 08_reference/src_evaluator.md
+    - Troubleshooting: 08_reference/troubleshooting.md
+    - Further Reading: 08_reference/further_reading.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pypi-ahmad
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css

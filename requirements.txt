@@ -1,0 +1,66 @@
+# ── Ollama Python client ─────────────────────────────────────────────────────
+# Talks to the local Ollama server; used for embeddings and LLM generation
+ollama==0.4.7
+
+# ── LangChain ecosystem ───────────────────────────────────────────────────────
+# Core abstractions (chains, prompts, document loaders)
+langchain==0.3.25
+# Community integrations (DuckDuckGo search, BM25 retriever wrapper)
+langchain-community==0.3.23
+# Ollama integration for LangChain (chat + embeddings via Ollama server)
+langchain-ollama==0.3.3
+
+# ── LangGraph ─────────────────────────────────────────────────────────────────
+# State-machine framework for building agentic workflows (Part 3)
+langgraph==0.4.8
+
+# ── Vector search ─────────────────────────────────────────────────────────────
+# FAISS CPU build — GPU VRAM is kept for Ollama models, not the index
+faiss-cpu==1.11.0
+
+# ── Sparse / keyword retrieval ────────────────────────────────────────────────
+# BM25 implementation (Part 2 hybrid retrieval)
+rank-bm25==0.2.2
+
+# ── Neural reranking ──────────────────────────────────────────────────────────
+# Loads cross-encoder/ms-marco-MiniLM-L-6-v2 for reranking (Part 2)
+sentence-transformers==4.1.0
+
+# ── HuggingFace datasets ──────────────────────────────────────────────────────
+# Downloads ccdv/arxiv-summarization from the Hub
+datasets==3.6.0
+huggingface-hub==0.31.4
+
+# ── Numerical / data stack ────────────────────────────────────────────────────
+numpy==2.2.6
+pandas==2.2.3
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+matplotlib==3.10.3
+
+# ── Progress bars ─────────────────────────────────────────────────────────────
+tqdm==4.67.1
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+ipykernel==6.29.5
+notebook==7.4.3
+
+# ── Web search (agentic fallback in Part 3) ───────────────────────────────────
+duckduckgo-search==8.0.1
+
+# ── Data validation ───────────────────────────────────────────────────────────
+pydantic==2.11.5
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+python-dotenv==1.1.0
+
+# ── Logging ───────────────────────────────────────────────────────────────────
+loguru==0.7.3
+
+# ── RAG evaluation ────────────────────────────────────────────────────────────
+# RAGAS: faithfulness, answer relevance, context recall metrics
+ragas==0.2.15
+
+# ── Token counting ────────────────────────────────────────────────────────────
+# Used to estimate chunk sizes in tokens (not just characters)
+tiktoken==0.9.0

@@ -1,0 +1,44 @@
+# ── Virtual environment ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Python bytecode ───────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── FAISS index (binary, can be 100s of MB) ───────────────────────────────────
+artifacts/faiss_index/*.index
+artifacts/faiss_index/*.pkl
+artifacts/faiss_index/*.bin
+
+# ── Agent trace logs (can be large JSON files) ────────────────────────────────
+artifacts/agent_traces/*.json
+
+# ── Raw dataset cache (re-downloadable from HuggingFace Hub) ─────────────────
+data/
+.cache/
+~/.cache/huggingface/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+*.env
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── OS noise ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Editor configs ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo

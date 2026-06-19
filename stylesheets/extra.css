@@ -1,0 +1,13 @@
+/* Slightly wider content area */
+.md-grid { max-width: 1440px; }
+
+/* Make admonition titles bold */
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary { font-weight: 700; }
+
+/* Result tables — center numeric columns */
+.md-typeset table:not([class]) th:not(:first-child),
+.md-typeset table:not([class]) td:not(:first-child) { text-align: center; }
+
+/* Code block filename label */
+.md-typeset .highlight .filename { font-weight: 600; }

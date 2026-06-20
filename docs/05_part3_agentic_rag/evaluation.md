@@ -164,15 +164,15 @@ not a ground truth.
 
 ## Saving results
 
-Results are saved to `artifacts/eval/03_agentic_rag.json` for comparison with Parts
+Results are saved to `artifacts/eval_results/03_agentic_rag_4000.json` for comparison with Parts
 1 and 2:
 
 ```python
 import json
 from pathlib import Path
 
-Path("artifacts/eval").mkdir(parents=True, exist_ok=True)
-with open("artifacts/eval/03_agentic_rag.json", "w") as f:
+Path("artifacts/eval_results").mkdir(parents=True, exist_ok=True)
+with open("artifacts/eval_results/03_agentic_rag_4000.json", "w") as f:
     json.dump({
         "n_queries": len(eval_questions),
         "relevant_retrieval_rate": sum(

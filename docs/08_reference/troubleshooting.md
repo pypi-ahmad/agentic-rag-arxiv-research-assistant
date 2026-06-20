@@ -46,7 +46,7 @@ ollama list
 If the models are not listed:
 
 ```bash
-ollama pull qwen3-embedding
+ollama pull qwen3-embedding:0.6b
 ollama pull granite4.1:8b
 ```
 
@@ -72,7 +72,7 @@ ollama list
 
 # Pull the correct model (check the exact tag)
 ollama pull granite4.1:8b
-ollama pull qwen3-embedding
+ollama pull qwen3-embedding:0.6b
 ```
 
 Then in the notebook, ensure the model name string matches exactly:
@@ -93,13 +93,13 @@ response = ollama.chat(model="granite4.1:latest", messages=[...]) # wrong tag
 **Exact error:**
 
 ```
-FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/faiss_index.bin'
+FileNotFoundError: FAISS index not found at artifacts/faiss_index/index.bin
 ```
 
 or
 
 ```
-FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/chunks.pkl'
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts/faiss_index/chunks.pkl'
 ```
 
 **Cause:** Parts 2 and 3 of the tutorial load the FAISS index and chunk list that are
@@ -109,9 +109,8 @@ notebook without having run Part 1 first, the `artifacts/` directory will be emp
 **Fix:** Run `01_naive_rag.ipynb` from top to bottom before opening any later notebook.
 The final cells save:
 
-- `artifacts/faiss_index.bin` — the FAISS index
-- `artifacts/chunks.pkl` — the list of chunk strings
-- `artifacts/metadata.pkl` — the list of metadata dicts
+- `artifacts/faiss_index/index.bin` — the FAISS index
+- `artifacts/faiss_index/chunks.pkl` — the chunk list with metadata
 
 You only need to run Part 1 once. After that, Parts 2 and 3 can be run independently
 as many times as needed.
@@ -119,7 +118,7 @@ as many times as needed.
 ```bash
 # Verify the artifacts exist
 ls -lh artifacts/
-# Should show: faiss_index.bin, chunks.pkl, metadata.pkl
+# Should show: faiss_index/ (containing index.bin and chunks.pkl)
 ```
 
 ---
@@ -394,9 +393,9 @@ ollama list
 
 ```python
 import faiss, pickle
-index = faiss.read_index("artifacts/faiss_index.bin")
-print(f"Index has {index.ntotal} vectors")  # should be 600
-with open("artifacts/chunks.pkl", "rb") as f:
+index = faiss.read_index("artifacts/faiss_index/index.bin")
+print(f"Index has {index.ntotal} vectors")  # should be > 0
+with open("artifacts/faiss_index/chunks.pkl", "rb") as f:
     chunks = pickle.load(f)
 print(f"Chunks list has {len(chunks)} entries")  # should match index.ntotal
 ```
@@ -405,7 +404,7 @@ print(f"Chunks list has {len(chunks)} entries")  # should match index.ntotal
 
 ```python
 import ollama
-response = ollama.embeddings(model="qwen3-embedding", prompt="test query")
+response = ollama.embeddings(model="qwen3-embedding:0.6b", prompt="test query")
 print(len(response["embedding"]))  # should print 1024
 ```
 

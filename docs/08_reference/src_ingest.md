@@ -1,175 +1,108 @@
-# `src/ingest.py` — Data Loading & Indexing
+# `src/ingest.py` — Data Loading and FAISS Indexing
 
 Source: [`src/ingest.py`](https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant/blob/main/src/ingest.py)
 
-This module owns the entire **build-time pipeline**: loading papers, chunking text, embedding chunks, and building + persisting the FAISS index. It is called once in notebook 01; notebooks 02 and 03 load the saved artifacts from disk.
+This module owns the build-time ingestion pipeline:
+
+1. load papers
+2. chunk documents
+3. embed chunks with Ollama
+4. build FAISS index
+5. save/load index artifacts
+
+It is used by notebook 01 for index creation and by downstream notebooks for index loading.
 
 ---
 
-## Constants
+## Key constants
 
 ```python
-EMBED_MODEL_LITE    = "qwen3-embedding:0.6b"   # 1 024-dim, ~639 MB VRAM
-EMBED_MODEL_PRIMARY = "qwen3-embedding:4b"      # 2 560-dim, ~2.5 GB VRAM
-TARGET_CATEGORIES   = ["cs.CL", "cs.AI", "cs.LG"]
-DEFAULT_INDEX_PATH  = Path("artifacts/faiss_index")
+EMBED_MODEL_PRIMARY = "qwen3-embedding:4b"
+EMBED_MODEL_LITE = "qwen3-embedding:0.6b"
+TARGET_CATEGORIES = ["cs.CL", "cs.AI", "cs.LG"]
+DEFAULT_CHUNK_SIZE = 512
+DEFAULT_CHUNK_OVERLAP = 64
 ```
 
-`EMBED_MODEL_PRIMARY` is the default used throughout. Switch to `EMBED_MODEL_LITE` to cut VRAM usage at the cost of retrieval quality (~15% MRR drop in our tests).
+`embed_texts()` and `embed_query()` default to `EMBED_MODEL_LITE` unless overridden.
 
 ---
 
-## `load_hf_papers(n_samples, ml_filter)`
+## Data loading
 
-```python
-def load_hf_papers(n_samples: int = 500, ml_filter: bool = True) -> list[dict]:
-```
+### `load_arxiv_papers(n_samples, categories)`
 
-Loads papers from the `ccdv/arxiv-summarization` HuggingFace dataset. This is the **primary data source** for all notebooks.
+Attempts live ArXiv retrieval first and falls back to HuggingFace when unavailable.
 
-**Parameters**
+### `load_hf_papers(n_samples, split, ml_filter, scan_multiplier)`
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| `n_samples` | `int` | `500` | How many papers to return after filtering |
-| `ml_filter` | `bool` | `True` | If `True`, only keeps papers whose abstract contains ML keywords |
+Loads from `ccdv/arxiv-summarization`, scans a larger slice, and keeps ML/AI-relevant rows when `ml_filter=True`.
 
-**Returns** — `list[dict]` where each dict has:
+Returns a `list[dict]` with keys:
 
-```python
-{
-    "id":       "2401.15884",          # arXiv paper ID
-    "title":    "Corrective RAG ...",  # paper title
-    "abstract": "We propose ...",      # full abstract text
-    "category": "cs.CL",              # primary arXiv category
-    "url":      "https://arxiv.org/abs/2401.15884"
-}
-```
-
-**How it works:**
-
-1. Streams `ccdv/arxiv-summarization` train split (avoids downloading all 203K papers at once)
-2. Filters rows: abstract must contain at least one ML keyword (`transformer`, `attention`, `neural`, `bert`, `gpt`, `llm`, `language model`, `deep learning`, `reinforcement`, `fine-tun`, `embedding`)
-3. Stops after collecting `n_samples` matching papers
-
-!!! tip "Why streaming?"
-    The full dataset is ~4 GB. Streaming lets us collect 2 000 papers in ~2 minutes without downloading the whole thing.
+- `id`
+- `title`
+- `abstract`
+- `category`
+- `url`
 
 ---
 
-## `load_arxiv_papers(n_samples, categories)`
+## Chunking
 
-```python
-def load_arxiv_papers(n_samples: int = 500, categories: list[str] | None = None) -> list[dict]:
-```
+### `chunk_documents(papers, chunk_size=512, chunk_overlap=64)`
 
-**Legacy function** — tries the live arxiv.org API first, falls back to `load_hf_papers()` on failure. Prefer `load_hf_papers()` directly to avoid rate-limit delays.
+Splits abstracts into overlapping character windows.
 
----
+Returns chunk dicts including:
 
-## `chunk_documents(papers, chunk_size, chunk_overlap)`
-
-```python
-def chunk_documents(
-    papers: list[dict],
-    chunk_size: int = 512,
-    chunk_overlap: int = 64,
-) -> list[dict]:
-```
-
-Splits each paper's abstract into overlapping fixed-size chunks.
-
-**Parameters**
-
-| Name | Default | Description |
-|------|---------|-------------|
-| `chunk_size` | `512` | Characters per chunk |
-| `chunk_overlap` | `64` | Characters shared between consecutive chunks |
-
-**Returns** — `list[dict]` where each dict has:
-
-```python
-{
-    "chunk_id": "2401.15884_chunk_0",  # unique identifier
-    "paper_id": "2401.15884",          # parent paper
-    "title":    "Corrective RAG ...",
-    "text":     "We propose a ...",    # the chunk text
-    "chunk_idx": 0,                    # position within paper
-    "category": "cs.CL"
-}
-```
-
-!!! note "Rule of thumb for chunk_size"
-    512 characters ≈ 100 tokens ≈ 2–3 sentences. For abstracts of 800–2 000 characters this produces 2–4 chunks per paper. Larger chunks give more context but coarser retrieval; smaller chunks give finer retrieval but lose sentence context.
+- `chunk_id`
+- `paper_id`
+- `title`
+- `text`
+- `chunk_idx`
+- `category`
 
 ---
 
-## `embed_texts(texts, model, batch_size)`
+## Embedding
 
-```python
-def embed_texts(
-    texts: list[str],
-    model: str = EMBED_MODEL_PRIMARY,
-    batch_size: int = 32,
-) -> np.ndarray:
-```
+### `embed_texts(texts, model=EMBED_MODEL_LITE, batch_size=32)`
 
-Calls `ollama.embed()` in batches and returns an **L2-normalised** float32 matrix.
+Embeds batched text using Ollama and returns L2-normalized `float32` matrix.
 
-**Returns** — `np.ndarray` of shape `(n_texts, embed_dim)`, L2-normalised (each row has unit norm).
+### `embed_query(query, model=EMBED_MODEL_LITE)`
 
-!!! info "Why L2-normalise?"
-    After normalisation, `dot(a, b) == cosine_similarity(a, b)`. This lets us use `faiss.IndexFlatIP` (inner product) as a cosine similarity index — no extra computation at query time.
+Embeds one query and returns shape `(1, dim)` for FAISS search compatibility.
 
 ---
 
-## `embed_query(query, model)`
+## FAISS index
 
-```python
-def embed_query(query: str, model: str = EMBED_MODEL_PRIMARY) -> np.ndarray:
-```
+### `build_faiss_index(embeddings)`
 
-Embeds a single query string. Returns shape `(1, embed_dim)` — the extra dimension is required by `faiss.index.search()`.
+Builds `faiss.IndexFlatIP` over normalized embeddings.
 
----
+### `save_index_and_chunks(index, chunks, base_path)`
 
-## `build_faiss_index(embeddings)`
+Persists synchronized artifacts under `base_path`:
 
-```python
-def build_faiss_index(embeddings: np.ndarray) -> faiss.IndexFlatIP:
-```
+- `artifacts/faiss_index/index.bin`
+- `artifacts/faiss_index/chunks.pkl`
 
-Creates a `faiss.IndexFlatIP` index and adds all embeddings.
+In this project, notebook 01 saves to `artifacts/faiss_index/`.
 
-`IndexFlatIP` performs **exact** inner-product search — no approximation, no compression. For 2 000 papers × ~4 chunks = ~8 000 chunks, exact search completes in under 1 ms per query. Switch to `IndexIVFFlat` for corpora above ~100 K vectors.
+### `load_index_and_chunks(base_path)`
 
----
-
-## `save_index_and_chunks(index, chunks, base_path)`
-
-```python
-def save_index_and_chunks(
-    index: faiss.IndexFlatIP,
-    chunks: list[dict],
-    base_path: Path = DEFAULT_INDEX_PATH,
-) -> None:
-```
-
-Saves two files that **must always be kept in sync**:
-
-| File | Format | Contents |
-|------|--------|----------|
-| `index.bin` | FAISS binary | The vector index |
-| `chunks.pkl` | Python pickle | The parallel list of chunk dicts |
-
-The integer row `i` in the FAISS index corresponds to `chunks[i]`. Never save one without the other.
+Loads the same pair and raises `FileNotFoundError` if notebook 01 has not been executed.
 
 ---
 
-## `load_index_and_chunks(base_path)`
+## Artifact contract
 
-```python
-def load_index_and_chunks(base_path: Path = DEFAULT_INDEX_PATH) -> tuple[faiss.IndexFlatIP, list[dict]]:
-```
+Downstream notebooks assume the pair below exists and remains position-aligned:
 
-Loads and returns `(index, chunks)`. Raises `FileNotFoundError` with a helpful message if notebook 01 has not been run yet.
+- `artifacts/faiss_index/index.bin`
+- `artifacts/faiss_index/chunks.pkl`
+
+If these files are missing, run `notebooks/01_naive_rag.ipynb` first.

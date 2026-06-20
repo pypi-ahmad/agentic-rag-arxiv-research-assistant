@@ -21,7 +21,7 @@ then adds a new 4,000-paper benchmark so readers can compare scale effects direc
 
 ## Outputs
 
-Part 4 writes scale-aware result artifacts:
+When notebook 04 is executed end-to-end, Part 4 writes scale-aware result artifacts:
 
 - `artifacts/eval_results/04_chromadb_graphrag_4000.json`
 - `artifacts/eval_results/04_pinecone_graphrag_4000.json`

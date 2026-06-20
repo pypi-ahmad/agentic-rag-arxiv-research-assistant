@@ -110,7 +110,7 @@ page explains the mapping in detail.
 
 ## The notebook file
 
-**`notebooks/03_agentic_rag.ipynb`** is the runnable version of this section. It
+**`notebooks/03_agentic_rag_langgraph.ipynb`** is the runnable version of this section. It
 depends on the FAISS index built in notebook 01. Each cell maps to one node in the
 graph, so you can test nodes in isolation before assembling the full agent.
 

@@ -52,9 +52,9 @@ This is an unusual choice for a tutorial — most use Wikipedia articles or rand
 
 ---
 
-## The progression: Naive → Advanced → Agentic → GraphRAG
+## The progression: Naive → Advanced → Agentic → GraphRAG → New Techniques
 
-This tutorial is structured as four progressively more capable systems.
+This tutorial is structured as five progressively more capable tracks.
 Each one fixes the failures of the previous one.
 
 ### Part 1 — Naive RAG: The baseline
@@ -82,7 +82,7 @@ Part 3 adds intelligence on top of the Advanced RAG retriever. Instead of blindl
 3. **Grades its own answer** — checks whether the answer contains only claims from the retrieved documents
 4. **Retries** — if a hallucination is detected, regenerates the answer (up to twice)
 
-This is the CRAG architecture (Corrective RAG, Yan et al. 2024), implemented as a LangGraph state machine with 5 nodes and conditional routing. The result: 7 out of 10 answers are faithful to the retrieved context, and web search is triggered 0 times out of 10 — meaning the corpus is almost always sufficient.
+This is the CRAG architecture (Corrective RAG, Yan et al. 2024), implemented as a LangGraph state machine with conditional routing. Legacy 10-query runs showed strong local-corpus coverage, while current 4,000-baseline artifacts also expose the tradeoff between faithfulness and fallback behavior under harder queries.
 
 ### Part 4 — GraphRAG: Structured retrieval at scale
 
@@ -90,6 +90,19 @@ Part 4 adds entity extraction, knowledge-graph construction, community detection
 dual backend execution (ChromaDB + Pinecone), then wraps GraphRAG in an agentic LangGraph
 loop. This introduces multi-hop and community-level retrieval strategies that are harder
 to express in a pure chunk-similarity pipeline.
+
+### Part 5 — New techniques: focused standalone implementations
+
+Part 5 adds five additional implementations as isolated, production-style modules and notebooks:
+
+- Hybrid RAG
+- GraphRAG
+- Agentic RAG
+- Corrective RAG (CRAG)
+- Multimodal RAG (including OCR and vision branches)
+
+These runs are tracked under `artifacts/rag_v2/` and documented in
+`docs/09_part5_new_techniques/`.
 
 ---
 
@@ -104,7 +117,7 @@ This tutorial does things differently:
 - **The eval is honest.** Legacy 600 numbers are kept visible, and current 4,000 numbers
   are reported side-by-side so readers can compare scaling effects directly.
 - **Failures are explained.** When hybrid search with alpha-blending doesn't beat BM25 alone, the tutorial explains why rather than hiding the result.
-- **Everything is local.** No OpenAI API key, no Pinecone subscription, no cloud GPU. If you have a 6+ GB VRAM GPU and Ollama installed, you can run everything for free.
+- **Local-first with optional cloud backend.** The core path runs locally with Ollama. Part 4 also includes an optional Pinecone backend that requires valid credentials.
 
 ---
 

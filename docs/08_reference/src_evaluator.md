@@ -2,7 +2,7 @@
 
 Source: [`src/evaluator.py`](https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant/blob/main/src/evaluator.py)
 
-Standalone evaluation utilities used by all three notebooks. Retrieval metrics require no LLM; generation metrics call `granite4.1:8b` via Ollama as an LLM judge.
+Standalone evaluation utilities used across notebook tracks. Retrieval metrics require no LLM; generation metrics call `granite4.1:8b` via Ollama as an LLM judge.
 
 ---
 
@@ -175,5 +175,6 @@ All notebook eval results are saved under `artifacts/eval_results/`:
 
 | File | Contents |
 |------|----------|
-| `01_naive_rag.json` | Dense baseline metrics |
-| `02_advanced_rag.json` | Best strategy from notebook 02 |
+| `artifacts/eval_results/01_naive_rag_4000.json` | Dense baseline metrics at 4,000-paper scale |
+| `artifacts/eval_results/02_advanced_rag_4000.json` | Advanced retrieval metrics at 4,000-paper scale |
+| `artifacts/eval_results/03_agentic_rag_4000.json` | Agentic CRAG metrics at 4,000-paper scale |

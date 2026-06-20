@@ -20,6 +20,6 @@ Section 1 of notebook 04 builds a full GraphRAG pipeline on a local ChromaDB col
 - Fast iteration for notebook development
 - Simple metadata-backed retrieval debugging
 
-## Artifact
+## Artifact (runtime-generated)
 
 - `artifacts/eval_results/04_chromadb_graphrag_4000.json`

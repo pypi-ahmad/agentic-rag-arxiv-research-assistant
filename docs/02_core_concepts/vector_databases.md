@@ -1,6 +1,6 @@
 # Vector Databases
 
-You have 600 ArXiv papers, each converted to one or more embedding vectors of 1024
+You have an ArXiv corpus (current baseline 4,000 papers; legacy baseline 600), each converted to one or more embedding vectors of 1024
 numbers. When a user asks a question, you embed the question and want to find the
 5 vectors in that collection that are most similar to the question's vector. How do
 you store those vectors so that query is fast?
@@ -23,7 +23,7 @@ similarity to this query vector."**
 
 There is no SQL index structure designed for that question. You would have to load
 every row, compute cosine similarity against the query, and sort — a full table scan
-for every single query. At 600 papers that takes milliseconds. At 6 million papers
+for every single query. At 4,000 papers that takes milliseconds. At 6 million papers
 it takes tens of seconds per query.
 
 !!! info "Definition — Nearest Neighbour Search"
@@ -96,7 +96,7 @@ loss for dramatic speed gains:
 - **IndexHNSW** — hierarchical graph structure; sub-millisecond queries at millions of vectors.
 - **IndexPQ** — product quantisation; compresses vectors to reduce memory.
 
-For this project's 600 papers (~1,200 chunks), `IndexFlatIP` is exactly right.
+For this project's tutorial-scale corpora, `IndexFlatIP` is exactly right.
 The corpus fits in memory, queries take microseconds, and there is zero accuracy loss.
 
 !!! tip "When to switch to approximate search"
@@ -206,27 +206,27 @@ The full lifecycle of the FAISS index spans two phases:
 
 ```mermaid
 flowchart LR
-    P[600 Papers] --> C[Chunk documents]
+    P[4,000 Papers] --> C[Chunk documents]
     C --> E[Embed with qwen3-embedding:0.6b]
     E --> N[L2-normalise]
     N --> F[Build IndexFlatIP]
-    F --> D[(index.bin\n+ chunks.pkl)]
+    F --> D[(artifacts/faiss_index/index.bin\n+ artifacts/faiss_index/chunks.pkl)]
 ```
 
-**Query time** (all three notebooks):
+**Query time** (core retrieval notebooks):
 
 ```mermaid
 flowchart LR
     Q([User Query]) --> EQ[Embed query]
     EQ --> S["index.search(query_vec, k=5)"]
-    D[(index.bin)] --> S
+    D[(artifacts/faiss_index/index.bin)] --> S
     S --> R[Top-k chunk dicts]
 ```
 
 The `save_index_and_chunks()` and `load_index_and_chunks()` functions in
 `src/ingest.py` handle the persistence. The index and the chunk metadata list are
 always saved together — the integer positions FAISS returns are only meaningful
-if you have the matching `chunks.pkl` to look up.
+if you have the matching `artifacts/faiss_index/chunks.pkl` to look up.
 
 ---
 

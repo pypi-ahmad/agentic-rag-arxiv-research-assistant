@@ -19,7 +19,7 @@ prompt but takes a sequence of actions, observes results, and decides what to do
 based on intermediate outcomes. The LLM acts as a *reasoner* that drives a loop rather
 than a function that maps input to output. Agentic systems can use tools, call external
 APIs, perform web searches, and grade their own outputs. In this project: the CRAG
-system in `03_agentic_rag_langgraph.ipynb` is an agentic pipeline where the LLM grades
+systems in `03_agentic_rag_langgraph.ipynb` and `07_agentic_rag.ipynb` are agentic pipelines where the LLM grades
 retrieved documents, decides whether to search the web, generates an answer, and grades
 its own answer for hallucinations.
 
@@ -28,8 +28,9 @@ its own answer for hallucinations.
 **ArXiv** — A free, open-access repository of preprint scientific papers, primarily
 in physics, mathematics, computer science, and quantitative biology. Most ML and AI
 research is posted here before (and sometimes instead of) formal journal publication.
-In this project: the corpus of 600 paper abstracts is downloaded from the ArXiv API
-using the `arxiv` Python library, searching for ML/AI keywords.
+In this project: the current baseline uses 4,000 ML/AI abstracts from
+`ccdv/arxiv-summarization` (ML-filtered), with legacy 600-paper results retained
+for historical comparison.
 
 ---
 
@@ -58,10 +59,8 @@ handle technical ML vocabulary.
 **ChromaDB** — An open-source, embedded vector database with a Python-first API.
 It stores embeddings alongside metadata and supports similarity search, filtering,
 and persistence to disk. ChromaDB is popular for prototypes and local development
-because it requires no separate server process. In this project: not used — FAISS
-was chosen for simplicity and direct control over the index file. ChromaDB is a
-natural next step for adding metadata filtering (e.g., filter by year or ArXiv
-category).
+because it requires no separate server process. In this project: used in Part 4
+GraphRAG as one backend variant, alongside an optional Pinecone backend.
 
 ---
 
@@ -101,9 +100,9 @@ introduced by Yan et al. (2024) that adds a self-correction loop to standard RAG
 system grades each retrieved document for relevance. If all documents are graded
 irrelevant, it triggers a web search to supplement the corpus. After generating an
 answer, the system grades the answer for faithfulness and can regenerate if hallucination
-is detected. In this project: implemented as a LangGraph state machine in
-`03_agentic_rag_langgraph.ipynb`, with the LLM-as-judge grading both retrieved documents
-and final answers.
+is detected. In this project: implemented in the legacy LangGraph track
+(`03_agentic_rag_langgraph.ipynb`) and extended in Part 5 CRAG (`08_crag.ipynb`),
+with LLM-as-judge grading for retrieval and final answers.
 
 ---
 
@@ -126,8 +125,8 @@ neighbour search in the embedding space. Dense retrieval excels at semantic simi
 it can find documents whose meaning matches the query even when they share no
 vocabulary. Its weakness is exact keyword matching — low-frequency technical terms
 that appear rarely in training data produce poorly discriminative embeddings. In this
-project: FAISS with `qwen3-embedding` is the dense retrieval stage in all three parts
-of the tutorial.
+project: FAISS with `qwen3-embedding` is the dense retrieval base for the core
+pipeline and is reused across advanced variants.
 
 ---
 
@@ -158,9 +157,8 @@ vectors for every abstract chunk and for every query at retrieval time.
 for efficient similarity search and clustering of dense vectors. FAISS implements
 dozens of index types with different accuracy/speed/memory trade-offs. It is the
 standard tool for embedding-based retrieval at scale. In this project: `IndexFlatIP`
-(exact inner-product search) is used — no approximation, suitable for a 600-document
-corpus. The index is saved to `artifacts/faiss_index.bin` after Part 1 and loaded
-by Parts 2 and 3.
+(exact inner-product search) is used for tutorial-scale corpora, and the index is
+saved to `artifacts/faiss_index/index.bin` after Part 1 for downstream loading.
 
 ---
 
@@ -218,8 +216,8 @@ measures how rare a term is across the entire corpus. IDF for term `t` is
 `df_t` is the number of documents containing `t`. Common words ("the", "is", "of")
 have low IDF; rare technical terms ("GraphSAGE", "CRAG", "LoRA") have high IDF. In
 BM25, high-IDF terms contribute much more to the relevance score than low-IDF terms.
-In this project: IDF is computed automatically by `rank_bm25` when the index is built
-over the 600-paper corpus.
+In this project: IDF is computed automatically by `rank_bm25` over the active
+corpus used for the run (legacy 600 or current 4,000 baseline).
 
 ---
 
@@ -227,9 +225,10 @@ over the 600-paper corpus.
 index stores all vectors in a flat array and performs an exhaustive (exact) search —
 no approximation. "IP" stands for inner product, which equals cosine similarity when
 vectors are L2-normalised. The trade-off: exact accuracy but O(n) search time. For
-600 documents this is negligible; for millions of documents you would switch to an
+4,000 documents this is still practical for exact tutorial-scale retrieval; for
+millions of documents you would switch to an
 approximate index like `IndexIVFFlat` or `IndexHNSWFlat`. In this project: `IndexFlatIP`
-is built in `01_naive_rag.ipynb` and saved to `artifacts/faiss_index.bin`.
+is built in `01_naive_rag.ipynb` and saved to `artifacts/faiss_index/index.bin`.
 
 ---
 
@@ -314,9 +313,8 @@ generation/judge model. All inference is local — no cloud API keys required.
 **Pinecone** — A fully managed cloud vector database service. Pinecone handles
 indexing, storage, and similarity search at scale without infrastructure management.
 It supports metadata filtering, namespaces, and multiple index types (serverless and
-pod-based). In this project: not used — FAISS on local disk was chosen for simplicity.
-Pinecone is the natural production upgrade path when the corpus grows beyond what fits
-in memory or when multi-user access is required.
+pod-based). In this project: used as an optional backend in Part 4 GraphRAG.
+The core baseline remains runnable locally without Pinecone.
 
 ---
 

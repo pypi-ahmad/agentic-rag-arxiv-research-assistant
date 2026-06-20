@@ -57,6 +57,7 @@ nav:
     - Prerequisites: 01_getting_started/prerequisites.md
     - Installation: 01_getting_started/installation.md
     - How to Use This Tutorial: 01_getting_started/how_to_use.md
+    - Tutorial Index: 01_getting_started/tutorial_index.md
 
   - Core Concepts:
     - What Is RAG: 02_core_concepts/what_is_rag.md

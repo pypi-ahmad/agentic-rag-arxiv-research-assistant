@@ -133,8 +133,10 @@ Answer: {answer}
 Respond with JSON only: {"faithful": true or false, "reason": "one sentence"}"""
 ```
 
-The function returns `1.0` for faithful, `0.0` for not. In our 20-query CRAG
-evaluation, **7 out of 10 answers were judged faithful** — a 70% faithfulness rate.
+The function returns `1.0` for faithful, `0.0` for not. In this repository, faithfulness
+is reported per experiment artifact (for example `artifacts/eval_results/03_agentic_rag_4000.json`
+and `artifacts/rag_v2/*/*_metrics.json`) and should be interpreted in the context of the
+specific query set and runtime mode used for that run.
 
 !!! warning "Limitations of LLM-as-judge"
     LLM judges can be inconsistent: the same (answer, context) pair may get different

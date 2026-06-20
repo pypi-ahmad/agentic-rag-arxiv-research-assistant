@@ -5,13 +5,16 @@ This page reports Part 4 outcomes at 4,000-paper scale and keeps the historical
 
 ## Result sources
 
+Part 4 result files below are generated when notebook 04 is executed. They may be
+absent in a clean clone until that notebook has been run.
+
 - 4,000 baseline:
-  - `04_chromadb_graphrag_4000.json`
-  - `04_pinecone_graphrag_4000.json`
-  - `04_agent_graphrag_4000.json`
+  - `artifacts/eval_results/04_chromadb_graphrag_4000.json`
+  - `artifacts/eval_results/04_pinecone_graphrag_4000.json`
+  - `artifacts/eval_results/04_agent_graphrag_4000.json`
 - Legacy 600 baseline:
-  - `legacy_600/01_naive_rag_legacy_600.json`
-  - `legacy_600/02_advanced_rag_legacy_600.json`
+  - `artifacts/eval_results/legacy_600/01_naive_rag_legacy_600.json`
+  - `artifacts/eval_results/legacy_600/02_advanced_rag_legacy_600.json`
 
 ## Interpretation guidance
 

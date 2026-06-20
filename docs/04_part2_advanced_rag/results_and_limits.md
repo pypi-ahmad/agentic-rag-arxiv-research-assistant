@@ -95,6 +95,9 @@ Part 3 wraps the Advanced RAG retrieval pipeline in a LangGraph state machine th
 3. **Answer faithfulness grading** — after generation, the LLM checks whether each claim in the answer is supported by the retrieved context. If not, the answer is flagged as a hallucination.
 4. **Retry loop** — on a hallucination flag, the agent regenerates (up to twice) before returning.
 
-This is the CRAG (Corrective RAG) architecture. The result: 7 out of 10 answers are graded faithful in the notebook, and web search is triggered 0 times — meaning the corpus is sufficient for the test queries.
+This is the CRAG (Corrective RAG) architecture. Legacy small-scope runs showed high
+faithfulness with little fallback, while current 4,000-baseline runs expose harder
+query conditions (see `artifacts/eval_results/03_agentic_rag_4000.json` for current
+agentic baseline behavior).
 
 Continue to [Part 3 — Agentic RAG](../05_part3_agentic_rag/overview.md).

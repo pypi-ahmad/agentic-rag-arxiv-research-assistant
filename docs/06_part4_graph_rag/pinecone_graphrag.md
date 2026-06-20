@@ -14,11 +14,11 @@ conditions.
 - Pinecone index creation/query permissions
 - Same embedding model and dimension used in Section 1
 
-## Artifact
+## Artifact (runtime-generated)
 
 - `artifacts/eval_results/04_pinecone_graphrag_4000.json`
 
 ## Comparison policy
 
-This project treats Pinecone execution as a required benchmark step for Part 4; results
-are not finalized with local stand-ins.
+Pinecone execution is optional but recommended when you need backend comparison with
+the local ChromaDB path.

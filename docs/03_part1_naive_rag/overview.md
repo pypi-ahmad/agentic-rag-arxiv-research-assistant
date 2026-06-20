@@ -17,7 +17,7 @@ three notebooks share.
 
 ```mermaid
 flowchart LR
-    A["1. Load\n600 ArXiv papers\nload_hf_papers()"] --> B["2. Chunk\n512-char windows\nchunk_documents()"]
+    A["1. Load\n4,000 ArXiv papers\nload_hf_papers()"] --> B["2. Chunk\n512-char windows\nchunk_documents()"]
     B --> C["3. Embed\nqwen3-embedding:0.6b\nembed_texts()"]
     C --> D["4. Index\nFAISS IndexFlatIP\nbuild_faiss_index()"]
     D --> E["5. Retrieve + Generate\nDenseRetriever\ngranite4.1:8b"]
@@ -29,13 +29,17 @@ flowchart LR
     style E fill:#fce4ec,stroke:#C62828
 ```
 
-At the end of the notebook you run a 20-query evaluation and record three numbers:
+At the end of the notebook you run a 20-query evaluation and record the baseline metrics.
+
+Current 4,000-paper baseline:
 
 | Metric | Value |
 |---|---|
-| Recall@5 | 0.250 |
-| Precision@5 | 0.120 |
-| MRR | 0.299 |
+| Recall@5 | 0.050 |
+| Precision@5 | 0.010 |
+| MRR | 0.0167 |
+
+Historical legacy 600 baseline (for comparison): Recall@5 = 0.250, Precision@5 = 0.120, MRR = 0.2992.
 
 These are your baseline. Part 2 improves them with hybrid retrieval and reranking.
 Part 3 builds an agent on top.
@@ -47,14 +51,14 @@ Part 3 builds an agent on top.
 **`notebooks/01_naive_rag.ipynb`** is the runnable version of this tutorial section.
 Each cell corresponds to a stage in the pipeline. The notebook:
 
-1. Calls `load_hf_papers()` to pull 600 ML papers from the `ccdv/arxiv-summarization` dataset.
+1. Calls `load_hf_papers()` to pull 4,000 ML papers from the `ccdv/arxiv-summarization` dataset.
 2. Calls `chunk_documents()` to split each abstract into 512-character overlapping chunks.
 3. Calls `embed_texts()` to generate 1024-dimensional vectors via Ollama.
 4. Calls `build_faiss_index()` to construct the FAISS index in memory.
 5. Calls `save_index_and_chunks()` to write the index to `artifacts/faiss_index/`.
 6. Instantiates `DenseRetriever` and runs several example queries.
 7. Defines a 20-query evaluation set and calls `compute_retrieval_metrics()`.
-8. Saves results to `artifacts/eval/01_naive_rag.json` for comparison across parts.
+8. Saves results to `artifacts/eval_results/01_naive_rag_4000.json` for comparison across parts.
 
 !!! info "Definition — Naive RAG"
     "Naive" means a single retrieval pass with a single dense retriever and no post-processing.

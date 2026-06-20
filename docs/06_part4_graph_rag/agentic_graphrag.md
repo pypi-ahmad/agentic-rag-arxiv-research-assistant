@@ -17,6 +17,6 @@ Section 3 of notebook 04 wraps GraphRAG retrieval in a LangGraph agent loop.
 - Adds global community retrieval before web fallback
 - Uses the same judge family across retrieval and answer checks in Part 4
 
-## Artifact
+## Artifact (runtime-generated)
 
 - `artifacts/eval_results/04_agent_graphrag_4000.json`

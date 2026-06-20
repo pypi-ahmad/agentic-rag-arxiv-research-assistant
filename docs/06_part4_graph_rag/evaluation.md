@@ -11,12 +11,12 @@ Part 4 applies the same evaluation structure to ChromaDB, Pinecone, and Agentic 
 - Primary baseline: 4,000-paper corpus (current)
 - Legacy baseline: 600-paper corpus (historical, preserved for comparison)
 
-## Outputs consumed by docs/README
+## Expected outputs from a full Part 4 run
 
-- `01_naive_rag_4000.json`
-- `02_advanced_rag_4000.json`
-- `03_agentic_rag_4000.json`
-- `04_chromadb_graphrag_4000.json`
-- `04_pinecone_graphrag_4000.json`
-- `04_agent_graphrag_4000.json`
-- `legacy_600/*.json`
+- `artifacts/eval_results/01_naive_rag_4000.json`
+- `artifacts/eval_results/02_advanced_rag_4000.json`
+- `artifacts/eval_results/03_agentic_rag_4000.json`
+- `artifacts/eval_results/04_chromadb_graphrag_4000.json`
+- `artifacts/eval_results/04_pinecone_graphrag_4000.json`
+- `artifacts/eval_results/04_agent_graphrag_4000.json`
+- `artifacts/eval_results/legacy_600/*.json`

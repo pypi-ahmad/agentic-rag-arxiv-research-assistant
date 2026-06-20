@@ -234,12 +234,14 @@ or `false` in the JSON) determines which edge the graph follows.
 
 ## Real Results
 
-On our 10-query CRAG evaluation:
+Agentic metrics vary by evaluation scope:
 
-- **7 out of 10 answers** were judged faithful by the LLM judge
-- The web search fallback was triggered on queries where the local 600-paper corpus
-  had no relevant material (expected for recent papers not in the index)
-- The hallucination retry loop fired at least once on 2 out of 10 queries
+- Legacy 10-query runs on the smaller corpus showed strong faithfulness with minimal fallback.
+- Current 4,000-baseline artifact (`artifacts/eval_results/03_agentic_rag_4000.json`) reports:
+  - `faithfulness_rate = 0.8`
+  - `web_search_rate = 0.8`
+
+This highlights a practical point: the same architecture can show very different behavior when query difficulty and corpus conditions change.
 
 The agentic loop does add latency — a query that triggers web search and one
 regeneration takes 3–5× longer than a straight pipeline call. This is the core

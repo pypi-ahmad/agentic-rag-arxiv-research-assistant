@@ -52,14 +52,25 @@ ollama --version
 
 ### 2. Pull the models
 
-Once Ollama is installed, pull the two models this tutorial uses. These are the exact models tested in the notebooks:
+Once Ollama is installed, pull the core models first. These are required for the main text RAG path:
 
 ```bash
-# Embedding model — used in all three notebooks for encoding chunks and queries
+# Embedding model — used in the core text-RAG notebooks
 ollama pull qwen3-embedding:0.6b   # ~639 MB
 
 # LLM — used for answer generation and LLM-as-judge grading
 ollama pull granite4.1:8b          # ~5.3 GB
+```
+
+Optional models used in extended notebooks:
+
+```bash
+# Higher-capacity embedding variant used in some experiments
+ollama pull qwen3-embedding:4b
+
+# Multimodal notebook (Part 5)
+ollama pull qwen3.5:4b
+ollama pull glm-ocr
 ```
 
 !!! info "What these models do"

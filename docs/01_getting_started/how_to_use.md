@@ -49,3 +49,5 @@ If notebook 02 or 03 fails with FAISS file-not-found, rerun notebook 01 fully.
 - Use docs pages to understand why a metric or behavior changed, then verify in notebook outputs.
 
 For full navigation across all tracks, see [Tutorial Index](tutorial_index.md).
+For route selection, see [Learning Tracks](learning_tracks.md).
+For offline reading, see [Full Tutorial PDF](handbook_pdf.md).

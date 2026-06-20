@@ -57,7 +57,9 @@ nav:
     - Prerequisites: 01_getting_started/prerequisites.md
     - Installation: 01_getting_started/installation.md
     - How to Use This Tutorial: 01_getting_started/how_to_use.md
+    - Learning Tracks: 01_getting_started/learning_tracks.md
     - Tutorial Index: 01_getting_started/tutorial_index.md
+    - Full Tutorial PDF: 01_getting_started/handbook_pdf.md
 
   - Core Concepts:
     - What Is RAG: 02_core_concepts/what_is_rag.md
@@ -113,11 +115,13 @@ nav:
     - Multimodal RAG: 09_part5_new_techniques/multimodal_rag.md
 
   - Results & Improvements:
+    - Recruiter Brief: 07_results/recruiter_brief.md
     - Full Benchmark Table: 07_results/benchmark_table.md
     - All 5 Improvements Explained: 07_results/improvements_explained.md
     - Reading the Numbers Honestly: 07_results/reading_the_numbers.md
 
   - Reference:
+    - Claims Traceability: 08_reference/claims_traceability.md
     - Glossary: 08_reference/glossary.md
     - src/ingest.py: 08_reference/src_ingest.md
     - src/retriever.py: 08_reference/src_retriever.md
@@ -171,6 +175,11 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+      fallback_to_build_date: true
+      strict: false
+  - print-site:
+      add_to_navigation: false
+      add_print_site_banner: true
 
 extra:
   social:

@@ -115,6 +115,18 @@ uv --version
 !!! note "Why uv instead of pip?"
     With pip, creating a virtual environment and installing the full dependency list for this project takes 3–5 minutes. With uv, it takes under 30 seconds. More importantly, `uv python install` lets you pin an exact Python version without needing pyenv or conda — which keeps the environment reproducible across machines.
 
+### 5. Chrome/Chromium (optional, for PDF export)
+
+If you want to regenerate the full tutorial handbook PDF locally, you need a Chrome/Chromium binary available in `PATH`.
+
+Verify:
+
+```bash
+google-chrome --version
+```
+
+If this command is unavailable, install Chrome/Chromium from your distro package manager before running `scripts/build_tutorial_pdf.py`.
+
 ---
 
 ## Hardware requirements

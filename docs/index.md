@@ -11,7 +11,9 @@ Current reference scope is **4,000 papers**, with **legacy 600-paper** results p
 - Project overview: [What Is This Project](01_getting_started/what_is_this_project.md)
 - Setup requirements: [Prerequisites](01_getting_started/prerequisites.md)
 - Environment setup: [Installation](01_getting_started/installation.md)
+- Guided routes: [Learning Tracks](01_getting_started/learning_tracks.md)
 - Full notebook map: [Tutorial Index](01_getting_started/tutorial_index.md)
+- Download handbook: [Full Tutorial PDF](01_getting_started/handbook_pdf.md)
 
 ---
 
@@ -49,6 +51,23 @@ graph LR
 
 ---
 
+## Two Reader Paths
+
+### Student path
+
+1. [Learning Tracks](01_getting_started/learning_tracks.md)
+2. [Tutorial Index](01_getting_started/tutorial_index.md)
+3. Part 1 → Part 5 chapters in order
+
+### Recruiter path
+
+1. [Recruiter Brief](07_results/recruiter_brief.md)
+2. [Full Benchmark Table](07_results/benchmark_table.md)
+3. [Claims Traceability](08_reference/claims_traceability.md)
+4. [Full Tutorial PDF](01_getting_started/handbook_pdf.md)
+
+---
+
 ## Result Sources
 
 - Current baseline metrics: `artifacts/eval_results/*_4000.json`
@@ -58,3 +77,4 @@ graph LR
 For interpretation guidance, use:
 - [Full Benchmark Table](07_results/benchmark_table.md)
 - [Reading the Numbers Honestly](07_results/reading_the_numbers.md)
+- [Recruiter Brief](07_results/recruiter_brief.md)

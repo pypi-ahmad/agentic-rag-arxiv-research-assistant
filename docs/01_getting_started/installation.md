@@ -81,6 +81,20 @@ Open `notebooks/01_naive_rag.ipynb` and select the `Agentic RAG` kernel.
 
 ---
 
+## 7) (Optional) Build full tutorial PDF
+
+```bash
+uv run python scripts/build_tutorial_pdf.py
+```
+
+Output:
+
+```text
+docs/assets/agentic-rag-full-tutorial.pdf
+```
+
+---
+
 ## Minimal smoke test cell
 
 ```python

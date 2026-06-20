@@ -4,6 +4,9 @@ This is the canonical index for the end-to-end tutorial track.
 
 Use this page to decide notebook order, dependencies, and where outputs are written.
 
+For guided routes, see [Learning Tracks](learning_tracks.md).
+For offline study, see [Full Tutorial PDF](handbook_pdf.md).
+
 ## Recommended Execution Order
 
 1. `notebooks/01_naive_rag.ipynb`
@@ -52,3 +55,11 @@ ollama pull glm-ocr
 - Treat 4,000-paper outputs as the current baseline.
 - Keep 600-paper outputs as historical reference for scale comparison.
 - Do not compare metrics across differently scoped eval settings without noting the scope.
+
+## Validation Commands
+
+```bash
+uv run python scripts/check_docs_integrity.py
+uv run python scripts/check_docs_facts.py
+uv run mkdocs build --strict
+```

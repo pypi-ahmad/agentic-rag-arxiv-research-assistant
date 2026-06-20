@@ -2,174 +2,226 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/01_getting_started/how_to_use/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/01_getting_started/installation/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/01_getting_started/prerequisites/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/01_getting_started/tutorial_index/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/01_getting_started/what_is_this_project/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/agentic_ai_langgraph/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/bm25_sparse_retrieval/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/embeddings/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/evaluation_metrics/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/hybrid_search/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/reranking/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/vector_databases/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/02_core_concepts/what_is_rag/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/03_part1_naive_rag/chunking/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/03_part1_naive_rag/embedding_indexing/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/03_part1_naive_rag/evaluation/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/03_part1_naive_rag/loading_data/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/03_part1_naive_rag/overview/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/03_part1_naive_rag/results_and_limits/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/03_part1_naive_rag/retrieval_generation/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/04_part2_advanced_rag/bm25_in_practice/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/04_part2_advanced_rag/cross_encoder_reranking/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/04_part2_advanced_rag/evaluation/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/04_part2_advanced_rag/hybrid_retrieval/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/04_part2_advanced_rag/overview/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/04_part2_advanced_rag/results_and_limits/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/crag_architecture/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/evaluation/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/langgraph_basics/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/llm_as_judge/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/overview/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/results_and_limits/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/threshold_improvement/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/05_part3_agentic_rag/web_search_fallback/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/06_part4_graph_rag/agentic_graphrag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/06_part4_graph_rag/chromadb_graphrag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/06_part4_graph_rag/evaluation/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/06_part4_graph_rag/overview/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/06_part4_graph_rag/pinecone_graphrag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/06_part4_graph_rag/results_and_limits/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/07_results/benchmark_table/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/07_results/improvements_explained/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/07_results/reading_the_numbers/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/08_reference/further_reading/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/08_reference/glossary/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/08_reference/src_evaluator/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/08_reference/src_ingest/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/08_reference/src_retriever/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/08_reference/troubleshooting/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/09_part5_new_techniques/agentic_rag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/09_part5_new_techniques/crag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/09_part5_new_techniques/graphrag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/09_part5_new_techniques/hybrid_rag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/09_part5_new_techniques/multimodal_rag/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/09_part5_new_techniques/overview/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
 </urlset>

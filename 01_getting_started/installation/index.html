@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to 2 000 ArXiv ML/AI research papers. Fully local, no cloud APIs required.">
+        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to a 4,000-paper ArXiv ML/AI baseline (with preserved 600-paper legacy results).">
       
       
         <meta name="author" content="Ahmad (pypi-ahmad)">
@@ -21,11 +21,8 @@
         <link rel="next" href="../how_to_use/">
       
       
-        
-      
-      
       <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/book/materialsymbolsoutlined/book_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -33,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -63,6 +60,7 @@
     
       
 
+    
     
     
   </head>
@@ -210,7 +208,7 @@
         <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -355,6 +353,46 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../06_part4_graph_rag/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 4 — Graph RAG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../09_part5_new_techniques/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 5 — New Techniques
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../07_results/benchmark_table/" class="md-tabs__link">
           
   
@@ -428,7 +466,7 @@
       <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -450,14 +488,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -498,14 +531,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Getting Started
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -514,11 +542,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Getting Started
-  
-
+            Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -534,14 +558,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is This Project
-  
-
     
   </span>
-  
   
 
       </a>
@@ -562,14 +581,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Prerequisites
-  
-
     
   </span>
-  
   
 
       </a>
@@ -599,14 +613,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Installation
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -617,14 +626,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Installation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -645,90 +649,89 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-clone-the-repository" class="md-nav__link">
+  <a href="#1-clone-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 1 — Clone the repository
-      
+      1) Clone repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-pull-ollama-models-if-not-done-already" class="md-nav__link">
+  <a href="#2-pull-required-ollama-models" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 2 — Pull Ollama models (if not done already)
-      
+      2) Pull required Ollama models
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-create-the-python-environment-with-uv" class="md-nav__link">
+  <a href="#3-create-python-environment-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 3 — Create the Python environment with uv
-      
+      3) Create Python environment with uv
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-install-dependencies" class="md-nav__link">
+  <a href="#4-install-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 4 — Install dependencies
-      
+      4) Install dependencies
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-register-the-jupyter-kernel" class="md-nav__link">
+  <a href="#5-register-jupyter-kernel" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 5 — Register the Jupyter kernel
-      
+      5) Register Jupyter kernel
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-launch-jupyter-and-verify" class="md-nav__link">
+  <a href="#6-launch-jupyter" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 6 — Launch Jupyter and verify
-      
+      6) Launch Jupyter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-the-full-setup-with-a-quick-smoke-test" class="md-nav__link">
+  <a href="#minimal-smoke-test-cell" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Verify the full setup with a quick smoke test
-      
+      Minimal smoke test cell
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-structure-what-youre-working-with" class="md-nav__link">
+  <a href="#repository-structure-high-level" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Project structure (what you're working with)
-      
+      Repository structure (high-level)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Repository structure (high-level)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#committed-vs-generated-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Committed vs generated artifacts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -753,14 +756,32 @@
   
   
   <span class="md-ellipsis">
-    
-  
     How to Use This Tutorial
-  
-
     
   </span>
   
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Index
+    
+  </span>
   
 
       </a>
@@ -806,14 +827,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Core Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -822,11 +838,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Core Concepts
-  
-
+            Core Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -842,14 +854,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -870,14 +877,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embeddings & Similarity
-  
-
     
   </span>
-  
   
 
       </a>
@@ -898,14 +900,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Vector Databases
-  
-
     
   </span>
-  
   
 
       </a>
@@ -926,14 +923,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 — Keyword Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -954,14 +946,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Search
-  
-
     
   </span>
-  
   
 
       </a>
@@ -982,14 +969,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1010,14 +992,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation Metrics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1038,14 +1015,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Agentic AI & LangGraph
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1091,14 +1063,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 1 — Naive RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1107,11 +1074,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 1 — Naive RAG
-  
-
+            Part 1 — Naive RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1127,14 +1090,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1155,14 +1113,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Loading the Dataset
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1183,14 +1136,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking Documents
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1211,14 +1159,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding & Indexing
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1239,14 +1182,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval & Generation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1267,14 +1205,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1295,14 +1228,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1348,14 +1276,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 2 — Advanced RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1364,11 +1287,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 2 — Advanced RAG
-  
-
+            Part 2 — Advanced RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1384,14 +1303,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1412,14 +1326,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 in Practice
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1440,14 +1349,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1468,14 +1372,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1496,14 +1395,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1524,14 +1418,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1577,14 +1466,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 3 — Agentic RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1593,11 +1477,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 3 — Agentic RAG
-  
-
+            Part 3 — Agentic RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1613,14 +1493,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1641,14 +1516,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LangGraph Basics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1669,14 +1539,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     CRAG Architecture
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1697,14 +1562,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LLM as Judge
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1725,14 +1585,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Web Search Fallback
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1753,14 +1608,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Grading Threshold Improvement
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1781,14 +1631,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1809,14 +1654,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1862,14 +1702,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Results & Improvements
-  
-
+    Part 4 — Graph RAG
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1878,11 +1713,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Results & Improvements
-  
-
+            Part 4 — Graph RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1893,19 +1724,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07_results/benchmark_table/" class="md-nav__link">
+      <a href="../../06_part4_graph_rag/overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
-    Full Benchmark Table
-  
-
+    Overview
     
   </span>
-  
   
 
       </a>
@@ -1921,19 +1747,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07_results/improvements_explained/" class="md-nav__link">
+      <a href="../../06_part4_graph_rag/chromadb_graphrag/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
-    All 5 Improvements Explained
-  
-
+    GraphRAG on ChromaDB
     
   </span>
-  
   
 
       </a>
@@ -1949,19 +1770,83 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07_results/reading_the_numbers/" class="md-nav__link">
+      <a href="../../06_part4_graph_rag/pinecone_graphrag/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
-    Reading the Numbers Honestly
-  
-
+    GraphRAG on Pinecone
     
   </span>
   
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/agentic_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/results_and_limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Results & Limitations
+    
+  </span>
   
 
       </a>
@@ -2007,14 +1892,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Reference
-  
-
+    Part 5 — New Techniques
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -2023,11 +1903,318 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
+            Part 5 — New Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
   
-    Reference
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/hybrid_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hybrid RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/crag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Corrective RAG (CRAG)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/multimodal_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Results & Improvements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Results & Improvements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_results/benchmark_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full Benchmark Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_results/improvements_explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    All 5 Improvements Explained
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_results/reading_the_numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reading the Numbers Honestly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2043,14 +2230,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Glossary
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2071,14 +2253,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/ingest.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2099,14 +2276,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/retriever.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2127,14 +2299,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/evaluator.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2155,14 +2322,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Troubleshooting
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2183,14 +2345,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Further Reading
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2233,90 +2390,89 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-clone-the-repository" class="md-nav__link">
+  <a href="#1-clone-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 1 — Clone the repository
-      
+      1) Clone repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-pull-ollama-models-if-not-done-already" class="md-nav__link">
+  <a href="#2-pull-required-ollama-models" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 2 — Pull Ollama models (if not done already)
-      
+      2) Pull required Ollama models
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-create-the-python-environment-with-uv" class="md-nav__link">
+  <a href="#3-create-python-environment-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 3 — Create the Python environment with uv
-      
+      3) Create Python environment with uv
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-install-dependencies" class="md-nav__link">
+  <a href="#4-install-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 4 — Install dependencies
-      
+      4) Install dependencies
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-register-the-jupyter-kernel" class="md-nav__link">
+  <a href="#5-register-jupyter-kernel" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 5 — Register the Jupyter kernel
-      
+      5) Register Jupyter kernel
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-launch-jupyter-and-verify" class="md-nav__link">
+  <a href="#6-launch-jupyter" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Step 6 — Launch Jupyter and verify
-      
+      6) Launch Jupyter
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-the-full-setup-with-a-quick-smoke-test" class="md-nav__link">
+  <a href="#minimal-smoke-test-cell" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Verify the full setup with a quick smoke test
-      
+      Minimal smoke test cell
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-structure-what-youre-working-with" class="md-nav__link">
+  <a href="#repository-structure-high-level" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Project structure (what you're working with)
-      
+      Repository structure (high-level)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Repository structure (high-level)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#committed-vs-generated-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Committed vs generated artifacts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2330,55 +2486,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-  
-
-
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../what_is_this_project/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -2389,159 +2496,82 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>This page walks through every step needed to go from a freshly cloned repository to a running Jupyter environment. Each step includes the exact commands tested on this project's development machine (Ubuntu Linux, RTX 4060, CUDA 12.8).</p>
-<p>If you haven't installed Ollama and pulled the models yet, do that first — see <a href="../prerequisites/">Prerequisites</a>.</p>
+<p>This page takes you from fresh clone to runnable notebook environment.</p>
+<p>If Ollama and required models are not installed yet, complete <a href="../prerequisites/">Prerequisites</a> first.</p>
 <hr />
-<h2 id="step-1-clone-the-repository">Step 1 — Clone the repository<a class="headerlink" href="#step-1-clone-the-repository" title="Permanent link">&para;</a></h2>
+<h2 id="1-clone-repository">1) Clone repository<a class="headerlink" href="#1-clone-repository" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant.git
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>agentic-rag-arxiv-research-assistant
 </span></code></pre></div>
-<p>You should now be inside the project directory. Verify with:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># notebooks/  src/  artifacts/  docs/  requirements.txt  README.md  mkdocs.yml</span>
-</span></code></pre></div>
 <hr />
-<h2 id="step-2-pull-ollama-models-if-not-done-already">Step 2 — Pull Ollama models (if not done already)<a class="headerlink" href="#step-2-pull-ollama-models-if-not-done-already" title="Permanent link">&para;</a></h2>
-<p>The notebooks call Ollama directly, so the models must be available before any notebook cell runs. If you completed the Prerequisites page, you can skip this step.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3-embedding:0.6b
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>granite4.1:8b
+<h2 id="2-pull-required-ollama-models">2) Pull required Ollama models<a class="headerlink" href="#2-pull-required-ollama-models" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3-embedding:0.6b
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>granite4.1:8b
 </span></code></pre></div>
-<p>Verify both are ready:</p>
+<p>Optional models used in extended notebooks:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3-embedding:4b
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3.5:4b
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ollama<span class="w"> </span>pull<span class="w"> </span>glm-ocr
+</span></code></pre></div>
+<p>Verify:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ollama<span class="w"> </span>list
 </span></code></pre></div>
-<p>Expected output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>NAME                        ID              SIZE    MODIFIED
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>granite4.1:8b               abc123...       5.3 GB  a minute ago
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>qwen3-embedding:0.6b        def456...       639 MB  2 minutes ago
-</span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Ollama server auto-start</p>
-<p>Running <code>ollama list</code> or <code>ollama pull</code> automatically starts the Ollama background server if it isn't already running. You don't need to manually run <code>ollama serve</code> before opening the notebooks — the Python <code>ollama</code> client will reach it at <code>http://localhost:11434</code>.</p>
-</div>
 <hr />
-<h2 id="step-3-create-the-python-environment-with-uv">Step 3 — Create the Python environment with uv<a class="headerlink" href="#step-3-create-the-python-environment-with-uv" title="Permanent link">&para;</a></h2>
-<p><code>uv</code> manages the Python version and the virtual environment. Run these commands in the project root (where <code>requirements.txt</code> lives):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Install Python 3.13.13 via uv (downloads it automatically if not present)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.13.13
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Create a virtual environment pinned to that Python version</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.13.13
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Activate the environment</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<h2 id="3-create-python-environment-with-uv">3) Create Python environment with <code>uv</code><a class="headerlink" href="#3-create-python-environment-with-uv" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.13.13
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.13.13
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </span></code></pre></div>
-<p>Your shell prompt should now show <code>(agentic-rag-arxiv-research-assistant)</code> or similar, indicating the environment is active.</p>
-<div class="admonition tip">
-<p class="admonition-title">Python 3.12 alternative</p>
-<p>If you prefer Python 3.12 for better compatibility with some ML libraries:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>uv<span class="w"> </span>python<span class="w"> </span>install<span class="w"> </span><span class="m">3</span>.12.10
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12.10
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div>
-<p>Both versions are tested and produce identical results.</p>
-</div>
 <hr />
-<h2 id="step-4-install-dependencies">Step 4 — Install dependencies<a class="headerlink" href="#step-4-install-dependencies" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<h2 id="4-install-dependencies">4) Install dependencies<a class="headerlink" href="#4-install-dependencies" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </span></code></pre></div>
-<p>This installs all pinned dependencies. On a fast connection with GPU support, this typically takes under 60 seconds with uv.</p>
-<p><strong>Verify the key packages installed correctly:</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>--version
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Python 3.13.13</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>uv<span class="w"> </span>pip<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>faiss
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># faiss-cpu    1.11.0</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>uv<span class="w"> </span>pip<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>langgraph
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># langgraph    0.4.8</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>uv<span class="w"> </span>pip<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>rank-bm25
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># rank-bm25    0.2.2</span>
+<p>Quick check:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>--version
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>uv<span class="w"> </span>pip<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;faiss|langgraph|rank-bm25&quot;</span>
 </span></code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">If you see CUDA-related errors during install</p>
-<p>This project uses <code>faiss-cpu</code> — the CPU-only FAISS build. This is intentional: FAISS runs fast enough on CPU for a 4000-vector index (sub-millisecond per query), and using the CPU build avoids CUDA version conflicts. If <code>pip</code> tries to install <code>faiss-gpu</code>, something is wrong with your <code>requirements.txt</code> — check that you're using the file from the repo root.</p>
-</div>
 <hr />
-<h2 id="step-5-register-the-jupyter-kernel">Step 5 — Register the Jupyter kernel<a class="headerlink" href="#step-5-register-the-jupyter-kernel" title="Permanent link">&para;</a></h2>
-<p>The virtual environment needs to be registered as a Jupyter kernel so you can select it from the notebook interface.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>agentic-rag-env<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Agentic RAG&quot;</span>
+<h2 id="5-register-jupyter-kernel">5) Register Jupyter kernel<a class="headerlink" href="#5-register-jupyter-kernel" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>agentic-rag-env<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Agentic RAG&quot;</span>
 </span></code></pre></div>
-<p>Expected output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Installed kernelspec agentic-rag-env in /home/&lt;user&gt;/.local/share/jupyter/kernels/agentic-rag-env
-</span></code></pre></div>
-<p>You only need to do this once. The kernel persists across sessions.</p>
 <hr />
-<h2 id="step-6-launch-jupyter-and-verify">Step 6 — Launch Jupyter and verify<a class="headerlink" href="#step-6-launch-jupyter-and-verify" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>jupyter<span class="w"> </span>notebook
+<h2 id="6-launch-jupyter">6) Launch Jupyter<a class="headerlink" href="#6-launch-jupyter" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>jupyter<span class="w"> </span>notebook
 </span></code></pre></div>
-<p>This opens the Jupyter interface in your browser. Navigate to <code>notebooks/</code> and open <code>01_naive_rag.ipynb</code>.</p>
-<p><strong>Before running any cells, confirm the kernel is set correctly:</strong></p>
+<p>Open <code>notebooks/01_naive_rag.ipynb</code> and select the <code>Agentic RAG</code> kernel.</p>
+<hr />
+<h2 id="minimal-smoke-test-cell">Minimal smoke test cell<a class="headerlink" href="#minimal-smoke-test-cell" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python:&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FAISS:&quot;</span><span class="p">,</span> <span class="n">faiss</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">model</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ollama</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="o">.</span><span class="n">models</span><span class="p">]</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Models:&quot;</span><span class="p">,</span> <span class="n">models</span><span class="p">)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;qwen3-embedding&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">),</span> <span class="s2">&quot;Missing qwen3-embedding model&quot;</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;granite4.1:8b&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">),</span> <span class="s2">&quot;Missing granite4.1:8b model&quot;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setup OK&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="repository-structure-high-level">Repository structure (high-level)<a class="headerlink" href="#repository-structure-high-level" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>agentic-rag-arxiv-research-assistant/
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── notebooks/                      # 01-09 tutorial notebooks
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>├── src/                            # shared pipeline modules + rag_v2 modules
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>├── artifacts/                      # metrics/results/indexes/traces
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>├── docs/                           # MkDocs tutorial documentation
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>├── requirements.txt
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>└── mkdocs.yml
+</span></code></pre></div>
+<h3 id="committed-vs-generated-artifacts">Committed vs generated artifacts<a class="headerlink" href="#committed-vs-generated-artifacts" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Look for the kernel name in the top-right corner of the notebook</li>
-<li>It should read <strong>"Agentic RAG"</strong> (the display name you registered)</li>
-<li>If it shows "Python 3" or something else, click on it and select "Agentic RAG" from the dropdown</li>
+<li>Committed: benchmark JSONs and reference outputs used by docs.</li>
+<li>Generated during runs: many runtime artifacts (for example FAISS binaries, notebook-specific outputs, backend-specific files).</li>
+<li><code>artifacts/faiss_index/</code> is ignored in git and regenerated by running notebook 01.</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Kernel not appearing?</p>
-<p>If "Agentic RAG" doesn't appear in the dropdown, run this command and refresh the Jupyter page:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>agentic-rag-env<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Agentic RAG&quot;</span>
-</span></code></pre></div>
-<p>Then in Jupyter: <strong>Kernel → Change Kernel → Agentic RAG</strong>.</p>
-</div>
-<hr />
-<h2 id="verify-the-full-setup-with-a-quick-smoke-test">Verify the full setup with a quick smoke test<a class="headerlink" href="#verify-the-full-setup-with-a-quick-smoke-test" title="Permanent link">&para;</a></h2>
-<p>Before running an entire notebook, run this quick check in the first cell to confirm that all the critical pieces are working:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Paste this into a new notebook cell and run it</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">rank_bm25</span><span class="w"> </span><span class="kn">import</span> <span class="n">BM25Okapi</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sentence_transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">CrossEncoder</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langgraph.graph</span><span class="w"> </span><span class="kn">import</span> <span class="n">StateGraph</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;FAISS: </span><span class="si">{</span><span class="n">faiss</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="c1"># Check Ollama is reachable and models are present</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="n">models</span> <span class="o">=</span> <span class="n">ollama</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">model_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">model</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">models</span><span class="p">]</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ollama models: </span><span class="si">{</span><span class="n">model_names</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;granite&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">),</span> <span class="s2">&quot;granite4.1:8b not found — run: ollama pull granite4.1:8b&quot;</span>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;qwen3-embedding&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">),</span> <span class="s2">&quot;qwen3-embedding:0.6b not found — run: ollama pull qwen3-embedding:0.6b&quot;</span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All checks passed. Ready to run the notebooks.&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<p>If you see <code>All checks passed</code> — you're ready to go.</p>
-<hr />
-<h2 id="project-structure-what-youre-working-with">Project structure (what you're working with)<a class="headerlink" href="#project-structure-what-youre-working-with" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>agentic-rag-arxiv-research-assistant/
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>│
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>├── notebooks/
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>│   ├── 01_naive_rag.ipynb              # Build FAISS index, baseline RAG, evaluation
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>│   ├── 02_advanced_rag.ipynb           # BM25 + hybrid + reranking
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>│   └── 03_agentic_rag_langgraph.ipynb  # LangGraph CRAG state machine
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>│
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>├── src/
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>│   ├── ingest.py                       # Paper loading, chunking, embedding, FAISS
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>│   ├── retriever.py                    # Dense, BM25, hybrid, reranker classes
-</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>│   └── evaluator.py                    # Recall@k, Precision@k, MRR, faithfulness
-</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>│
-</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>├── artifacts/
-</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>│   ├── faiss_index/                    # index.bin + chunks.pkl (built by notebook 01)
-</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>│   ├── eval_results/                   # JSON results + comparison plots
-</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>│   └── agent_traces/                   # LangGraph execution traces (notebook 03)
-</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>│
-</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>├── requirements.txt
-</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>└── mkdocs.yml
-</span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">The artifacts/ directory is not committed to git</p>
-<p><code>artifacts/faiss_index/</code> is in <code>.gitignore</code> — the binary index files are 70–100 MB and don't belong in git. You regenerate them by running notebook 01. The <code>eval_results/</code> plots and JSON files are committed so you can compare your results against the reference run.</p>
-</div>
-<hr />
-<p>Continue to <a href="../how_to_use/">How to Use This Tutorial</a> to understand the notebook run order and how the docs connect to the code.</p>
+<p>Continue to <a href="../how_to_use/">How to Use This Tutorial</a> and <a href="../tutorial_index/">Tutorial Index</a>.</p>
 
 
 
@@ -2564,7 +2594,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 19, 2026 09:24:33 UTC"><span class="timeago" datetime="2026-06-19T09:24:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 19, 2026 09:24:33 UTC">2026-06-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 16:30:15 UTC"><span class="timeago" datetime="2026-06-20T16:30:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 16:30:15 UTC">2026-06-20</span>
   </span>
 
     
@@ -2658,8 +2688,7 @@
   
 </div>
       
-        
-<div class="md-social">
+        <div class="md-social">
   
     
     
@@ -2669,7 +2698,7 @@
       
     
     <a href="https://github.com/pypi-ahmad" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -2686,11 +2715,10 @@
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

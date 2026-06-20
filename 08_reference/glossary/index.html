@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to 2 000 ArXiv ML/AI research papers. Fully local, no cloud APIs required.">
+        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to a 4,000-paper ArXiv ML/AI baseline (with preserved 600-paper legacy results).">
       
       
         <meta name="author" content="Ahmad (pypi-ahmad)">
@@ -21,11 +21,8 @@
         <link rel="next" href="../src_ingest/">
       
       
-        
-      
-      
       <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/book/materialsymbolsoutlined/book_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -33,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -63,6 +60,7 @@
     
       
 
+    
     
     
   </head>
@@ -210,7 +208,7 @@
         <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -353,6 +351,46 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../06_part4_graph_rag/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 4 — Graph RAG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../09_part5_new_techniques/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 5 — New Techniques
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../07_results/benchmark_table/" class="md-tabs__link">
           
   
@@ -428,7 +466,7 @@
       <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -450,14 +488,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -495,14 +528,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Getting Started
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -511,11 +539,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Getting Started
-  
-
+            Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -531,14 +555,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is This Project
-  
-
     
   </span>
-  
   
 
       </a>
@@ -559,14 +578,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Prerequisites
-  
-
     
   </span>
-  
   
 
       </a>
@@ -587,14 +601,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Installation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -615,14 +624,32 @@
   
   
   <span class="md-ellipsis">
-    
-  
     How to Use This Tutorial
-  
-
     
   </span>
   
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_getting_started/tutorial_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Index
+    
+  </span>
   
 
       </a>
@@ -668,14 +695,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Core Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -684,11 +706,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Core Concepts
-  
-
+            Core Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -704,14 +722,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -732,14 +745,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embeddings & Similarity
-  
-
     
   </span>
-  
   
 
       </a>
@@ -760,14 +768,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Vector Databases
-  
-
     
   </span>
-  
   
 
       </a>
@@ -788,14 +791,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 — Keyword Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -816,14 +814,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Search
-  
-
     
   </span>
-  
   
 
       </a>
@@ -844,14 +837,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -872,14 +860,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation Metrics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -900,14 +883,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Agentic AI & LangGraph
-  
-
     
   </span>
-  
   
 
       </a>
@@ -953,14 +931,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 1 — Naive RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -969,11 +942,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 1 — Naive RAG
-  
-
+            Part 1 — Naive RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -989,14 +958,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1017,14 +981,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Loading the Dataset
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1045,14 +1004,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking Documents
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1073,14 +1027,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding & Indexing
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1101,14 +1050,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval & Generation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1129,14 +1073,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1157,14 +1096,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1210,14 +1144,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 2 — Advanced RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1226,11 +1155,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 2 — Advanced RAG
-  
-
+            Part 2 — Advanced RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1246,14 +1171,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1274,14 +1194,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 in Practice
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1302,14 +1217,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1330,14 +1240,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1358,14 +1263,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1386,14 +1286,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1439,14 +1334,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 3 — Agentic RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1455,11 +1345,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 3 — Agentic RAG
-  
-
+            Part 3 — Agentic RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1475,14 +1361,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1503,14 +1384,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LangGraph Basics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1531,14 +1407,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     CRAG Architecture
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1559,14 +1430,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LLM as Judge
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1587,14 +1453,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Web Search Fallback
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1615,14 +1476,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Grading Threshold Improvement
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1643,14 +1499,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1671,14 +1522,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1724,14 +1570,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Results & Improvements
-  
-
+    Part 4 — Graph RAG
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1740,11 +1581,387 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
+            Part 4 — Graph RAG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
   
-    Results & Improvements
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/chromadb_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG on ChromaDB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/pinecone_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG on Pinecone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/agentic_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/results_and_limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Results & Limitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 5 — New Techniques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Part 5 — New Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/hybrid_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hybrid RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/crag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Corrective RAG (CRAG)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/multimodal_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Results & Improvements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Results & Improvements
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1760,14 +1977,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Full Benchmark Table
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1788,14 +2000,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     All 5 Improvements Explained
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1816,14 +2023,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Reading the Numbers Honestly
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1864,35 +2066,26 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    
-  
     Reference
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Reference
-  
-
+            Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1917,14 +2110,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Glossary
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1946,14 +2134,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/ingest.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1974,14 +2157,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/retriever.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2002,14 +2180,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/evaluator.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2030,14 +2203,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Troubleshooting
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2058,14 +2226,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Further Reading
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2109,55 +2272,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-  
-
-
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Reference
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -2183,15 +2297,16 @@ prompt but takes a sequence of actions, observes results, and decides what to do
 based on intermediate outcomes. The LLM acts as a <em>reasoner</em> that drives a loop rather
 than a function that maps input to output. Agentic systems can use tools, call external
 APIs, perform web searches, and grade their own outputs. In this project: the CRAG
-system in <code>03_agentic_rag_langgraph.ipynb</code> is an agentic pipeline where the LLM grades
+systems in <code>03_agentic_rag_langgraph.ipynb</code> and <code>07_agentic_rag.ipynb</code> are agentic pipelines where the LLM grades
 retrieved documents, decides whether to search the web, generates an answer, and grades
 its own answer for hallucinations.</p>
 <hr />
 <p><strong>ArXiv</strong> — A free, open-access repository of preprint scientific papers, primarily
 in physics, mathematics, computer science, and quantitative biology. Most ML and AI
 research is posted here before (and sometimes instead of) formal journal publication.
-In this project: the corpus of 600 paper abstracts is downloaded from the ArXiv API
-using the <code>arxiv</code> Python library, searching for ML/AI keywords.</p>
+In this project: the current baseline uses 4,000 ML/AI abstracts from
+<code>ccdv/arxiv-summarization</code> (ML-filtered), with legacy 600-paper results retained
+for historical comparison.</p>
 <hr />
 <p><strong>Bi-encoder</strong> — A neural network architecture for information retrieval where the
 query and each document are encoded <em>independently</em> by the same (or separate) encoder,
@@ -2214,10 +2329,8 @@ handle technical ML vocabulary.</p>
 <p><strong>ChromaDB</strong> — An open-source, embedded vector database with a Python-first API.
 It stores embeddings alongside metadata and supports similarity search, filtering,
 and persistence to disk. ChromaDB is popular for prototypes and local development
-because it requires no separate server process. In this project: not used — FAISS
-was chosen for simplicity and direct control over the index file. ChromaDB is a
-natural next step for adding metadata filtering (e.g., filter by year or ArXiv
-category).</p>
+because it requires no separate server process. In this project: used in Part 4
+GraphRAG as one backend variant, alongside an optional Pinecone backend.</p>
 <hr />
 <p><strong>Chunking</strong> — The process of splitting a long document into smaller, overlapping or
 non-overlapping segments before embedding. LLM context windows and embedding models
@@ -2249,9 +2362,9 @@ introduced by Yan et al. (2024) that adds a self-correction loop to standard RAG
 system grades each retrieved document for relevance. If all documents are graded
 irrelevant, it triggers a web search to supplement the corpus. After generating an
 answer, the system grades the answer for faithfulness and can regenerate if hallucination
-is detected. In this project: implemented as a LangGraph state machine in
-<code>03_agentic_rag_langgraph.ipynb</code>, with the LLM-as-judge grading both retrieved documents
-and final answers.</p>
+is detected. In this project: implemented in the legacy LangGraph track
+(<code>03_agentic_rag_langgraph.ipynb</code>) and extended in Part 5 CRAG (<code>08_crag.ipynb</code>),
+with LLM-as-judge grading for retrieval and final answers.</p>
 <hr />
 <p><strong>Cross-encoder</strong> — A neural network architecture for relevance scoring where the
 query and a candidate document are concatenated and processed <em>together</em> by the encoder.
@@ -2270,8 +2383,8 @@ neighbour search in the embedding space. Dense retrieval excels at semantic simi
 it can find documents whose meaning matches the query even when they share no
 vocabulary. Its weakness is exact keyword matching — low-frequency technical terms
 that appear rarely in training data produce poorly discriminative embeddings. In this
-project: FAISS with <code>qwen3-embedding</code> is the dense retrieval stage in all three parts
-of the tutorial.</p>
+project: FAISS with <code>qwen3-embedding</code> is the dense retrieval base for the core
+pipeline and is reused across advanced variants.</p>
 <hr />
 <p><strong>DSPy</strong> — A framework for programming (rather than prompting) language models, using
 optimisers to automatically tune prompts and few-shot examples based on a downstream
@@ -2294,9 +2407,8 @@ vectors for every abstract chunk and for every query at retrieval time.</p>
 for efficient similarity search and clustering of dense vectors. FAISS implements
 dozens of index types with different accuracy/speed/memory trade-offs. It is the
 standard tool for embedding-based retrieval at scale. In this project: <code>IndexFlatIP</code>
-(exact inner-product search) is used — no approximation, suitable for a 600-document
-corpus. The index is saved to <code>artifacts/faiss_index.bin</code> after Part 1 and loaded
-by Parts 2 and 3.</p>
+(exact inner-product search) is used for tutorial-scale corpora, and the index is
+saved to <code>artifacts/faiss_index/index.bin</code> after Part 1 for downstream loading.</p>
 <hr />
 <p><strong>Faithfulness</strong> — A property of an LLM-generated answer: the answer is <em>faithful</em> if
 every claim it makes is supported by (or at least not contradicted by) the retrieved
@@ -2342,16 +2454,17 @@ measures how rare a term is across the entire corpus. IDF for term <code>t</code
 <code>df_t</code> is the number of documents containing <code>t</code>. Common words ("the", "is", "of")
 have low IDF; rare technical terms ("GraphSAGE", "CRAG", "LoRA") have high IDF. In
 BM25, high-IDF terms contribute much more to the relevance score than low-IDF terms.
-In this project: IDF is computed automatically by <code>rank_bm25</code> when the index is built
-over the 600-paper corpus.</p>
+In this project: IDF is computed automatically by <code>rank_bm25</code> over the active
+corpus used for the run (legacy 600 or current 4,000 baseline).</p>
 <hr />
 <p><strong>IndexFlatIP</strong> — The specific FAISS index type used in this project. "Flat" means the
 index stores all vectors in a flat array and performs an exhaustive (exact) search —
 no approximation. "IP" stands for inner product, which equals cosine similarity when
 vectors are L2-normalised. The trade-off: exact accuracy but O(n) search time. For
-600 documents this is negligible; for millions of documents you would switch to an
+4,000 documents this is still practical for exact tutorial-scale retrieval; for
+millions of documents you would switch to an
 approximate index like <code>IndexIVFFlat</code> or <code>IndexHNSWFlat</code>. In this project: <code>IndexFlatIP</code>
-is built in <code>01_naive_rag.ipynb</code> and saved to <code>artifacts/faiss_index.bin</code>.</p>
+is built in <code>01_naive_rag.ipynb</code> and saved to <code>artifacts/faiss_index/index.bin</code>.</p>
 <hr />
 <p><strong>LangGraph</strong> — A library built on top of LangChain that enables the construction of
 stateful, multi-step agent workflows as directed graphs. Nodes are Python functions
@@ -2418,9 +2531,8 @@ generation/judge model. All inference is local — no cloud API keys required.</
 <p><strong>Pinecone</strong> — A fully managed cloud vector database service. Pinecone handles
 indexing, storage, and similarity search at scale without infrastructure management.
 It supports metadata filtering, namespaces, and multiple index types (serverless and
-pod-based). In this project: not used — FAISS on local disk was chosen for simplicity.
-Pinecone is the natural production upgrade path when the corpus grows beyond what fits
-in memory or when multi-user access is required.</p>
+pod-based). In this project: used as an optional backend in Part 4 GraphRAG.
+The core baseline remains runnable locally without Pinecone.</p>
 <hr />
 <p><strong>Precision@k</strong> — The fraction of the top-k retrieved documents that are relevant:
 <code>Precision@k = (relevant documents in top k) / k</code>. Unlike Recall@k, Precision@k
@@ -2538,7 +2650,7 @@ In this project: FAISS (<code>IndexFlatIP</code>) is used as a vector index (exa
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 19, 2026 09:24:33 UTC"><span class="timeago" datetime="2026-06-19T09:24:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 19, 2026 09:24:33 UTC">2026-06-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 16:30:15 UTC"><span class="timeago" datetime="2026-06-20T16:30:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 16:30:15 UTC">2026-06-20</span>
   </span>
 
     
@@ -2632,8 +2744,7 @@ In this project: FAISS (<code>IndexFlatIP</code>) is used as a vector index (exa
   
 </div>
       
-        
-<div class="md-social">
+        <div class="md-social">
   
     
     
@@ -2643,7 +2754,7 @@ In this project: FAISS (<code>IndexFlatIP</code>) is used as a vector index (exa
       
     
     <a href="https://github.com/pypi-ahmad" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -2660,11 +2771,10 @@ In this project: FAISS (<code>IndexFlatIP</code>) is used as a vector index (exa
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

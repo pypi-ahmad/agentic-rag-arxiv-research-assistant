@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to 2 000 ArXiv ML/AI research papers. Fully local, no cloud APIs required.">
+        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to a 4,000-paper ArXiv ML/AI baseline (with preserved 600-paper legacy results).">
       
       
         <meta name="author" content="Ahmad (pypi-ahmad)">
@@ -21,11 +21,8 @@
         <link rel="next" href="../prerequisites/">
       
       
-        
-      
-      
       <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/book/materialsymbolsoutlined/book_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -33,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -63,6 +60,7 @@
     
       
 
+    
     
     
   </head>
@@ -210,7 +208,7 @@
         <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -355,6 +353,46 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../06_part4_graph_rag/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 4 — Graph RAG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../09_part5_new_techniques/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 5 — New Techniques
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../07_results/benchmark_table/" class="md-tabs__link">
           
   
@@ -428,7 +466,7 @@
       <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -450,14 +488,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -498,14 +531,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Getting Started
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -514,11 +542,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Getting Started
-  
-
+            Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -543,14 +567,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is This Project
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -561,14 +580,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is This Project
-  
-
     
   </span>
-  
   
 
       </a>
@@ -591,9 +605,7 @@
         <li class="md-nav__item">
   <a href="#the-problem-llms-are-confident-but-frozen-and-fallible" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The problem: LLMs are confident, but frozen and fallible
-      
+      The problem: LLMs are confident, but frozen and fallible
     </span>
   </a>
   
@@ -602,9 +614,7 @@
         <li class="md-nav__item">
   <a href="#the-solution-rag-grounds-the-answer-in-real-documents" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The solution: RAG grounds the answer in real documents
-      
+      The solution: RAG grounds the answer in real documents
     </span>
   </a>
   
@@ -613,32 +623,26 @@
         <li class="md-nav__item">
   <a href="#why-arxiv-mlai-papers" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Why ArXiv ML/AI papers?
-      
+      Why ArXiv ML/AI papers?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-progression-naive-advanced-agentic" class="md-nav__link">
+  <a href="#the-progression-naive-advanced-agentic-graphrag-new-techniques" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The progression: Naive → Advanced → Agentic
-      
+      The progression: Naive → Advanced → Agentic → GraphRAG → New Techniques
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The progression: Naive → Advanced → Agentic">
+    <nav class="md-nav" aria-label="The progression: Naive → Advanced → Agentic → GraphRAG → New Techniques">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#part-1-naive-rag-the-baseline" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Part 1 — Naive RAG: The baseline
-      
+      Part 1 — Naive RAG: The baseline
     </span>
   </a>
   
@@ -647,9 +651,7 @@
           <li class="md-nav__item">
   <a href="#part-2-advanced-rag-better-retrieval" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Part 2 — Advanced RAG: Better retrieval
-      
+      Part 2 — Advanced RAG: Better retrieval
     </span>
   </a>
   
@@ -658,9 +660,25 @@
           <li class="md-nav__item">
   <a href="#part-3-agentic-rag-self-correction" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Part 3 — Agentic RAG: Self-correction
-      
+      Part 3 — Agentic RAG: Self-correction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-graphrag-structured-retrieval-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4 — GraphRAG: Structured retrieval at scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-new-techniques-focused-standalone-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5 — New techniques: focused standalone implementations
     </span>
   </a>
   
@@ -674,9 +692,7 @@
         <li class="md-nav__item">
   <a href="#what-makes-this-tutorial-different" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        What makes this tutorial different?
-      
+      What makes this tutorial different?
     </span>
   </a>
   
@@ -703,14 +719,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Prerequisites
-  
-
     
   </span>
-  
   
 
       </a>
@@ -731,14 +742,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Installation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -759,14 +765,32 @@
   
   
   <span class="md-ellipsis">
-    
-  
     How to Use This Tutorial
-  
-
     
   </span>
   
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Index
+    
+  </span>
   
 
       </a>
@@ -812,14 +836,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Core Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -828,11 +847,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Core Concepts
-  
-
+            Core Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -848,14 +863,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -876,14 +886,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embeddings & Similarity
-  
-
     
   </span>
-  
   
 
       </a>
@@ -904,14 +909,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Vector Databases
-  
-
     
   </span>
-  
   
 
       </a>
@@ -932,14 +932,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 — Keyword Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -960,14 +955,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Search
-  
-
     
   </span>
-  
   
 
       </a>
@@ -988,14 +978,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1016,14 +1001,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation Metrics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1044,14 +1024,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Agentic AI & LangGraph
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1097,14 +1072,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 1 — Naive RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1113,11 +1083,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 1 — Naive RAG
-  
-
+            Part 1 — Naive RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1133,14 +1099,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1161,14 +1122,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Loading the Dataset
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1189,14 +1145,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking Documents
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1217,14 +1168,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding & Indexing
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1245,14 +1191,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval & Generation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1273,14 +1214,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1301,14 +1237,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1354,14 +1285,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 2 — Advanced RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1370,11 +1296,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 2 — Advanced RAG
-  
-
+            Part 2 — Advanced RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1390,14 +1312,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1418,14 +1335,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 in Practice
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1446,14 +1358,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1474,14 +1381,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1502,14 +1404,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1530,14 +1427,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1583,14 +1475,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 3 — Agentic RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1599,11 +1486,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 3 — Agentic RAG
-  
-
+            Part 3 — Agentic RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1619,14 +1502,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1647,14 +1525,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LangGraph Basics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1675,14 +1548,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     CRAG Architecture
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1703,14 +1571,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LLM as Judge
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1731,14 +1594,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Web Search Fallback
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1759,14 +1617,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Grading Threshold Improvement
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1787,14 +1640,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1815,14 +1663,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1868,14 +1711,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Results & Improvements
-  
-
+    Part 4 — Graph RAG
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1884,11 +1722,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Results & Improvements
-  
-
+            Part 4 — Graph RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1899,19 +1733,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07_results/benchmark_table/" class="md-nav__link">
+      <a href="../../06_part4_graph_rag/overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
-    Full Benchmark Table
-  
-
+    Overview
     
   </span>
-  
   
 
       </a>
@@ -1927,19 +1756,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07_results/improvements_explained/" class="md-nav__link">
+      <a href="../../06_part4_graph_rag/chromadb_graphrag/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
-    All 5 Improvements Explained
-  
-
+    GraphRAG on ChromaDB
     
   </span>
-  
   
 
       </a>
@@ -1955,19 +1779,83 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07_results/reading_the_numbers/" class="md-nav__link">
+      <a href="../../06_part4_graph_rag/pinecone_graphrag/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    
-  
-    Reading the Numbers Honestly
-  
-
+    GraphRAG on Pinecone
     
   </span>
   
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/agentic_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/results_and_limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Results & Limitations
+    
+  </span>
   
 
       </a>
@@ -2013,14 +1901,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Reference
-  
-
+    Part 5 — New Techniques
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -2029,11 +1912,318 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
+            Part 5 — New Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
   
-    Reference
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/hybrid_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hybrid RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/crag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Corrective RAG (CRAG)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/multimodal_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Results & Improvements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Results & Improvements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_results/benchmark_table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full Benchmark Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_results/improvements_explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    All 5 Improvements Explained
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_results/reading_the_numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reading the Numbers Honestly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2049,14 +2239,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Glossary
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2077,14 +2262,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/ingest.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2105,14 +2285,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/retriever.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2133,14 +2308,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/evaluator.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2161,14 +2331,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Troubleshooting
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2189,14 +2354,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Further Reading
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2241,9 +2401,7 @@
         <li class="md-nav__item">
   <a href="#the-problem-llms-are-confident-but-frozen-and-fallible" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The problem: LLMs are confident, but frozen and fallible
-      
+      The problem: LLMs are confident, but frozen and fallible
     </span>
   </a>
   
@@ -2252,9 +2410,7 @@
         <li class="md-nav__item">
   <a href="#the-solution-rag-grounds-the-answer-in-real-documents" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The solution: RAG grounds the answer in real documents
-      
+      The solution: RAG grounds the answer in real documents
     </span>
   </a>
   
@@ -2263,32 +2419,26 @@
         <li class="md-nav__item">
   <a href="#why-arxiv-mlai-papers" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Why ArXiv ML/AI papers?
-      
+      Why ArXiv ML/AI papers?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-progression-naive-advanced-agentic" class="md-nav__link">
+  <a href="#the-progression-naive-advanced-agentic-graphrag-new-techniques" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The progression: Naive → Advanced → Agentic
-      
+      The progression: Naive → Advanced → Agentic → GraphRAG → New Techniques
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The progression: Naive → Advanced → Agentic">
+    <nav class="md-nav" aria-label="The progression: Naive → Advanced → Agentic → GraphRAG → New Techniques">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#part-1-naive-rag-the-baseline" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Part 1 — Naive RAG: The baseline
-      
+      Part 1 — Naive RAG: The baseline
     </span>
   </a>
   
@@ -2297,9 +2447,7 @@
           <li class="md-nav__item">
   <a href="#part-2-advanced-rag-better-retrieval" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Part 2 — Advanced RAG: Better retrieval
-      
+      Part 2 — Advanced RAG: Better retrieval
     </span>
   </a>
   
@@ -2308,9 +2456,25 @@
           <li class="md-nav__item">
   <a href="#part-3-agentic-rag-self-correction" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Part 3 — Agentic RAG: Self-correction
-      
+      Part 3 — Agentic RAG: Self-correction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-graphrag-structured-retrieval-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4 — GraphRAG: Structured retrieval at scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-new-techniques-focused-standalone-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5 — New techniques: focused standalone implementations
     </span>
   </a>
   
@@ -2324,9 +2488,7 @@
         <li class="md-nav__item">
   <a href="#what-makes-this-tutorial-different" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        What makes this tutorial different?
-      
+      What makes this tutorial different?
     </span>
   </a>
   
@@ -2342,55 +2504,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-  
-
-
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -2426,15 +2539,18 @@
 <p>This tutorial builds both phases, from scratch, step by step.</p>
 <hr />
 <h2 id="why-arxiv-mlai-papers">Why ArXiv ML/AI papers?<a class="headerlink" href="#why-arxiv-mlai-papers" title="Permanent link">&para;</a></h2>
-<p>The corpus for this project is 600 recent ArXiv paper abstracts from three categories: <code>cs.CL</code> (computation and language), <code>cs.AI</code> (artificial intelligence), and <code>cs.LG</code> (machine learning).</p>
+<p>The current baseline corpus is 4,000 ArXiv ML/AI paper abstracts from HuggingFace
+(<code>ccdv/arxiv-summarization</code>, ML-filtered). Historical 600-paper runs are preserved as
+legacy comparison artifacts.</p>
 <p>This is an unusual choice for a tutorial — most use Wikipedia articles or random web pages. Here's why ArXiv ML papers are better for learning RAG:</p>
 <p><strong>Self-referential.</strong> We're building a RAG system <em>about</em> RAG systems, transformers, and fine-tuning. The system can answer questions about itself. This makes it easy to spot when retrieval is working (you'll recognise the papers it finds) and when it's failing (you'll notice when it retrieves something irrelevant).</p>
 <p><strong>Verifiable.</strong> ArXiv papers have titles, abstracts, and well-defined claims. A good answer is clearly good; a bad answer is clearly bad. This makes evaluation honest rather than subjective.</p>
 <p><strong>Naturally multi-topic.</strong> A question like "how does LoRA relate to quantization?" genuinely requires finding information across multiple papers. This exposes the real challenges of retrieval — not just "find the paper about X" but "find all the papers that together answer the question."</p>
 <p><strong>Terminology-dense.</strong> ML papers are full of exact technical terms — model names, method names, benchmark names. This is the ideal stress test for the hybrid retrieval system in Part 2, where keyword-based BM25 search handles exact terms that semantic search sometimes misses.</p>
 <hr />
-<h2 id="the-progression-naive-advanced-agentic">The progression: Naive → Advanced → Agentic<a class="headerlink" href="#the-progression-naive-advanced-agentic" title="Permanent link">&para;</a></h2>
-<p>This tutorial is structured as three progressively more capable systems. Each one fixes the failures of the previous one.</p>
+<h2 id="the-progression-naive-advanced-agentic-graphrag-new-techniques">The progression: Naive → Advanced → Agentic → GraphRAG → New Techniques<a class="headerlink" href="#the-progression-naive-advanced-agentic-graphrag-new-techniques" title="Permanent link">&para;</a></h2>
+<p>This tutorial is structured as five progressively more capable tracks.
+Each one fixes the failures of the previous one.</p>
 <h3 id="part-1-naive-rag-the-baseline">Part 1 — Naive RAG: The baseline<a class="headerlink" href="#part-1-naive-rag-the-baseline" title="Permanent link">&para;</a></h3>
 <p>The simplest possible RAG pipeline: embed everything with one model, search with FAISS, generate with the LLM. It works, but the retrieval quality is poor. When measured honestly against 20 diverse queries, it achieves an MRR of 0.299 — meaning the most relevant paper appears at rank 3–4 on average.</p>
 <p>You'll see exactly <em>why</em> it fails: semantic search alone misses queries that use exact technical terminology, and there's no way to recover once the wrong documents are retrieved.</p>
@@ -2454,16 +2570,34 @@
 <li><strong>Grades its own answer</strong> — checks whether the answer contains only claims from the retrieved documents</li>
 <li><strong>Retries</strong> — if a hallucination is detected, regenerates the answer (up to twice)</li>
 </ol>
-<p>This is the CRAG architecture (Corrective RAG, Yan et al. 2024), implemented as a LangGraph state machine with 5 nodes and conditional routing. The result: 7 out of 10 answers are faithful to the retrieved context, and web search is triggered 0 times out of 10 — meaning the corpus is almost always sufficient.</p>
+<p>This is the CRAG architecture (Corrective RAG, Yan et al. 2024), implemented as a LangGraph state machine with conditional routing. Legacy 10-query runs showed strong local-corpus coverage, while current 4,000-baseline artifacts also expose the tradeoff between faithfulness and fallback behavior under harder queries.</p>
+<h3 id="part-4-graphrag-structured-retrieval-at-scale">Part 4 — GraphRAG: Structured retrieval at scale<a class="headerlink" href="#part-4-graphrag-structured-retrieval-at-scale" title="Permanent link">&para;</a></h3>
+<p>Part 4 adds entity extraction, knowledge-graph construction, community detection, and
+dual backend execution (ChromaDB + Pinecone), then wraps GraphRAG in an agentic LangGraph
+loop. This introduces multi-hop and community-level retrieval strategies that are harder
+to express in a pure chunk-similarity pipeline.</p>
+<h3 id="part-5-new-techniques-focused-standalone-implementations">Part 5 — New techniques: focused standalone implementations<a class="headerlink" href="#part-5-new-techniques-focused-standalone-implementations" title="Permanent link">&para;</a></h3>
+<p>Part 5 adds five additional implementations as isolated, production-style modules and notebooks:</p>
+<ul>
+<li>Hybrid RAG</li>
+<li>GraphRAG</li>
+<li>Agentic RAG</li>
+<li>Corrective RAG (CRAG)</li>
+<li>Multimodal RAG (including OCR and vision branches)</li>
+</ul>
+<p>These runs are tracked under <code>artifacts/rag_v2/</code> and documented in
+<code>docs/09_part5_new_techniques/</code>.</p>
 <hr />
 <h2 id="what-makes-this-tutorial-different">What makes this tutorial different?<a class="headerlink" href="#what-makes-this-tutorial-different" title="Permanent link">&para;</a></h2>
 <p>Most RAG tutorials show you <em>how to build</em> the pipeline but not <em>how well it works</em>. They use 5 hand-picked test questions and don't measure anything. They don't explain why certain design choices were made, or what happens when something fails.</p>
 <p>This tutorial does things differently:</p>
 <ul>
-<li><strong>Every step is measured.</strong> Retrieval quality is evaluated with a 20-query benchmark using MRR, Recall@5, and Precision@5. You see the actual numbers change as each improvement is added.</li>
-<li><strong>The eval is honest.</strong> Early runs used an inflated 5-query benchmark that produced MRR = 0.67. That benchmark was replaced with a harder 20-query set, which dropped the baseline to MRR = 0.299. Lower numbers on a harder benchmark is the more useful result.</li>
+<li><strong>Every step is measured.</strong> Retrieval quality is evaluated with benchmarked metrics and
+  persisted JSON artifacts at both legacy 600 and current 4,000 scale.</li>
+<li><strong>The eval is honest.</strong> Legacy 600 numbers are kept visible, and current 4,000 numbers
+  are reported side-by-side so readers can compare scaling effects directly.</li>
 <li><strong>Failures are explained.</strong> When hybrid search with alpha-blending doesn't beat BM25 alone, the tutorial explains why rather than hiding the result.</li>
-<li><strong>Everything is local.</strong> No OpenAI API key, no Pinecone subscription, no cloud GPU. If you have a 6+ GB VRAM GPU and Ollama installed, you can run everything for free.</li>
+<li><strong>Local-first with optional cloud backend.</strong> The core path runs locally with Ollama. Part 4 also includes an optional Pinecone backend that requires valid credentials.</li>
 </ul>
 <hr />
 <p>Ready to check whether your machine is set up? Continue to <a href="../prerequisites/">Prerequisites</a>.</p>
@@ -2489,7 +2623,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 19, 2026 09:24:33 UTC"><span class="timeago" datetime="2026-06-19T09:24:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 19, 2026 09:24:33 UTC">2026-06-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 16:30:15 UTC"><span class="timeago" datetime="2026-06-20T16:30:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 16:30:15 UTC">2026-06-20</span>
   </span>
 
     
@@ -2583,8 +2717,7 @@
   
 </div>
       
-        
-<div class="md-social">
+        <div class="md-social">
   
     
     
@@ -2594,7 +2727,7 @@
       
     
     <a href="https://github.com/pypi-ahmad" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -2611,11 +2744,10 @@
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

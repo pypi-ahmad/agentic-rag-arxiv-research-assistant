@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to 2 000 ArXiv ML/AI research papers. Fully local, no cloud APIs required.">
+        <meta name="description" content="A complete tutorial on Retrieval-Augmented Generation (RAG) — from first principles to a production-grade agentic pipeline with LangGraph, applied to a 4,000-paper ArXiv ML/AI baseline (with preserved 600-paper legacy results).">
       
       
         <meta name="author" content="Ahmad (pypi-ahmad)">
@@ -21,11 +21,8 @@
         <link rel="next" href="../further_reading/">
       
       
-        
-      
-      
       <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/book/materialsymbolsoutlined/book_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -33,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -63,6 +60,7 @@
     
       
 
+    
     
     
   </head>
@@ -210,7 +208,7 @@
         <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -353,6 +351,46 @@
     
     
       <li class="md-tabs__item">
+        <a href="../../06_part4_graph_rag/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 4 — Graph RAG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../09_part5_new_techniques/overview/" class="md-tabs__link">
+          
+  
+  
+  Part 5 — New Techniques
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../../07_results/benchmark_table/" class="md-tabs__link">
           
   
@@ -428,7 +466,7 @@
       <a href="https://github.com/pypi-ahmad/agentic-rag-arxiv-research-assistant" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     pypi-ahmad/agentic-rag-arxiv-research-assistant
@@ -450,14 +488,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
     
   </span>
-  
   
 
       </a>
@@ -495,14 +528,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Getting Started
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -511,11 +539,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Getting Started
-  
-
+            Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -531,14 +555,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is This Project
-  
-
     
   </span>
-  
   
 
       </a>
@@ -559,14 +578,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Prerequisites
-  
-
     
   </span>
-  
   
 
       </a>
@@ -587,14 +601,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Installation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -615,14 +624,32 @@
   
   
   <span class="md-ellipsis">
-    
-  
     How to Use This Tutorial
-  
-
     
   </span>
   
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_getting_started/tutorial_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial Index
+    
+  </span>
   
 
       </a>
@@ -668,14 +695,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Core Concepts
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -684,11 +706,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Core Concepts
-  
-
+            Core Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -704,14 +722,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     What Is RAG
-  
-
     
   </span>
-  
   
 
       </a>
@@ -732,14 +745,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embeddings & Similarity
-  
-
     
   </span>
-  
   
 
       </a>
@@ -760,14 +768,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Vector Databases
-  
-
     
   </span>
-  
   
 
       </a>
@@ -788,14 +791,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 — Keyword Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -816,14 +814,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Search
-  
-
     
   </span>
-  
   
 
       </a>
@@ -844,14 +837,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -872,14 +860,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation Metrics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -900,14 +883,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Agentic AI & LangGraph
-  
-
     
   </span>
-  
   
 
       </a>
@@ -953,14 +931,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 1 — Naive RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -969,11 +942,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 1 — Naive RAG
-  
-
+            Part 1 — Naive RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -989,14 +958,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1017,14 +981,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Loading the Dataset
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1045,14 +1004,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Chunking Documents
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1073,14 +1027,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Embedding & Indexing
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1101,14 +1050,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Retrieval & Generation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1129,14 +1073,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1157,14 +1096,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1210,14 +1144,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 2 — Advanced RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1226,11 +1155,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 2 — Advanced RAG
-  
-
+            Part 2 — Advanced RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1246,14 +1171,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1274,14 +1194,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     BM25 in Practice
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1302,14 +1217,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Hybrid Retrieval
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1330,14 +1240,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Cross-Encoder Reranking
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1358,14 +1263,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1386,14 +1286,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1439,14 +1334,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Part 3 — Agentic RAG
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1455,11 +1345,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Part 3 — Agentic RAG
-  
-
+            Part 3 — Agentic RAG
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1475,14 +1361,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Overview
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1503,14 +1384,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LangGraph Basics
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1531,14 +1407,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     CRAG Architecture
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1559,14 +1430,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     LLM as Judge
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1587,14 +1453,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Web Search Fallback
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1615,14 +1476,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Grading Threshold Improvement
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1643,14 +1499,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Evaluation
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1671,14 +1522,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Results & Limitations
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1724,14 +1570,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
-    Results & Improvements
-  
-
+    Part 4 — Graph RAG
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1740,11 +1581,387 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
+            Part 4 — Graph RAG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
   
-    Results & Improvements
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/chromadb_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG on ChromaDB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/pinecone_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG on Pinecone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/agentic_graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_part4_graph_rag/results_and_limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Results & Limitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Part 5 — New Techniques
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Part 5 — New Techniques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/hybrid_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hybrid RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/graphrag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphRAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/agentic_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agentic RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/crag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Corrective RAG (CRAG)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09_part5_new_techniques/multimodal_rag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal RAG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Results & Improvements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Results & Improvements
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1760,14 +1977,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Full Benchmark Table
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1788,14 +2000,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     All 5 Improvements Explained
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1816,14 +2023,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Reading the Numbers Honestly
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1864,35 +2066,26 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    
-  
     Reference
-  
-
     
   </span>
-  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Reference
-  
-
+            Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1908,14 +2101,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Glossary
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1936,14 +2124,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/ingest.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1964,14 +2147,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/retriever.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -1992,14 +2170,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     src/evaluator.py
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2029,14 +2202,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Troubleshooting
-  
-
     
   </span>
-  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -2047,14 +2215,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Troubleshooting
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2077,9 +2240,7 @@
         <li class="md-nav__item">
   <a href="#connectionerror-ollama-not-running" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        ConnectionError — Ollama not running
-      
+      ConnectionError — Ollama not running
     </span>
   </a>
   
@@ -2088,9 +2249,7 @@
         <li class="md-nav__item">
   <a href="#ollamaresponseerror-model-not-found" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        ollama.ResponseError — Model not found
-      
+      ollama.ResponseError — Model not found
     </span>
   </a>
   
@@ -2099,9 +2258,7 @@
         <li class="md-nav__item">
   <a href="#filenotfounderror-faiss-index-not-found" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        FileNotFoundError — FAISS index not found
-      
+      FileNotFoundError — FAISS index not found
     </span>
   </a>
   
@@ -2110,9 +2267,7 @@
         <li class="md-nav__item">
   <a href="#jsonjsondecodeerror-grade_documents-parsing-failure" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        json.JSONDecodeError — grade_documents parsing failure
-      
+      json.JSONDecodeError — grade_documents parsing failure
     </span>
   </a>
   
@@ -2121,9 +2276,7 @@
         <li class="md-nav__item">
   <a href="#faiss-idx-1-sentinel-missing-or-corrupted-results" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        FAISS idx = -1 sentinel — missing or corrupted results
-      
+      FAISS idx = -1 sentinel — missing or corrupted results
     </span>
   </a>
   
@@ -2132,9 +2285,7 @@
         <li class="md-nav__item">
   <a href="#ratelimitexception-duckduckgo-web-search-throttled" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        RatelimitException — DuckDuckGo web search throttled
-      
+      RatelimitException — DuckDuckGo web search throttled
     </span>
   </a>
   
@@ -2143,9 +2294,7 @@
         <li class="md-nav__item">
   <a href="#attributeerror-compiledstategraph-has-no-attribute-graph" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        AttributeError — CompiledStateGraph has no attribute 'graph'
-      
+      AttributeError — CompiledStateGraph has no attribute 'graph'
     </span>
   </a>
   
@@ -2154,9 +2303,7 @@
         <li class="md-nav__item">
   <a href="#arxivhttperror-503-429-arxiv-api-unavailable-or-rate-limited" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        arxiv.HTTPError 503 / 429 — ArXiv API unavailable or rate-limited
-      
+      arxiv.HTTPError 503 / 429 — ArXiv API unavailable or rate-limited
     </span>
   </a>
   
@@ -2165,9 +2312,7 @@
         <li class="md-nav__item">
   <a href="#general-debugging-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        General debugging tips
-      
+      General debugging tips
     </span>
   </a>
   
@@ -2194,14 +2339,9 @@
   
   
   <span class="md-ellipsis">
-    
-  
     Further Reading
-  
-
     
   </span>
-  
   
 
       </a>
@@ -2246,9 +2386,7 @@
         <li class="md-nav__item">
   <a href="#connectionerror-ollama-not-running" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        ConnectionError — Ollama not running
-      
+      ConnectionError — Ollama not running
     </span>
   </a>
   
@@ -2257,9 +2395,7 @@
         <li class="md-nav__item">
   <a href="#ollamaresponseerror-model-not-found" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        ollama.ResponseError — Model not found
-      
+      ollama.ResponseError — Model not found
     </span>
   </a>
   
@@ -2268,9 +2404,7 @@
         <li class="md-nav__item">
   <a href="#filenotfounderror-faiss-index-not-found" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        FileNotFoundError — FAISS index not found
-      
+      FileNotFoundError — FAISS index not found
     </span>
   </a>
   
@@ -2279,9 +2413,7 @@
         <li class="md-nav__item">
   <a href="#jsonjsondecodeerror-grade_documents-parsing-failure" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        json.JSONDecodeError — grade_documents parsing failure
-      
+      json.JSONDecodeError — grade_documents parsing failure
     </span>
   </a>
   
@@ -2290,9 +2422,7 @@
         <li class="md-nav__item">
   <a href="#faiss-idx-1-sentinel-missing-or-corrupted-results" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        FAISS idx = -1 sentinel — missing or corrupted results
-      
+      FAISS idx = -1 sentinel — missing or corrupted results
     </span>
   </a>
   
@@ -2301,9 +2431,7 @@
         <li class="md-nav__item">
   <a href="#ratelimitexception-duckduckgo-web-search-throttled" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        RatelimitException — DuckDuckGo web search throttled
-      
+      RatelimitException — DuckDuckGo web search throttled
     </span>
   </a>
   
@@ -2312,9 +2440,7 @@
         <li class="md-nav__item">
   <a href="#attributeerror-compiledstategraph-has-no-attribute-graph" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        AttributeError — CompiledStateGraph has no attribute 'graph'
-      
+      AttributeError — CompiledStateGraph has no attribute 'graph'
     </span>
   </a>
   
@@ -2323,9 +2449,7 @@
         <li class="md-nav__item">
   <a href="#arxivhttperror-503-429-arxiv-api-unavailable-or-rate-limited" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        arxiv.HTTPError 503 / 429 — ArXiv API unavailable or rate-limited
-      
+      arxiv.HTTPError 503 / 429 — ArXiv API unavailable or rate-limited
     </span>
   </a>
   
@@ -2334,9 +2458,7 @@
         <li class="md-nav__item">
   <a href="#general-debugging-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        General debugging tips
-      
+      General debugging tips
     </span>
   </a>
   
@@ -2352,55 +2474,6 @@
           
           
             <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-  
-
-
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../glossary/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Reference
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
-              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -2439,7 +2512,7 @@ Ollama is not up.</p>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Should show: qwen3-embedding and granite4.1:8b</span>
 </span></code></pre></div>
 <p>If the models are not listed:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3-embedding
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3-embedding:0.6b
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>granite4.1:8b
 </span></code></pre></div>
 <hr />
@@ -2456,7 +2529,7 @@ version, or after Ollama updates change model naming conventions.</p>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Pull the correct model (check the exact tag)</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>ollama<span class="w"> </span>pull<span class="w"> </span>granite4.1:8b
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3-embedding
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>ollama<span class="w"> </span>pull<span class="w"> </span>qwen3-embedding:0.6b
 </span></code></pre></div>
 <p>Then in the notebook, ensure the model name string matches exactly:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Correct</span>
@@ -2469,10 +2542,10 @@ version, or after Ollama updates change model naming conventions.</p>
 <hr />
 <h2 id="filenotfounderror-faiss-index-not-found"><code>FileNotFoundError</code> — FAISS index not found<a class="headerlink" href="#filenotfounderror-faiss-index-not-found" title="Permanent link">&para;</a></h2>
 <p><strong>Exact error:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>FileNotFoundError: [Errno 2] No such file or directory: &#39;artifacts/faiss_index.bin&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>FileNotFoundError: FAISS index not found at artifacts/faiss_index/index.bin
 </span></code></pre></div>
 <p>or</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>FileNotFoundError: [Errno 2] No such file or directory: &#39;artifacts/chunks.pkl&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>FileNotFoundError: [Errno 2] No such file or directory: &#39;artifacts/faiss_index/chunks.pkl&#39;
 </span></code></pre></div>
 <p><strong>Cause:</strong> Parts 2 and 3 of the tutorial load the FAISS index and chunk list that are
 saved at the end of Part 1 (<code>01_naive_rag.ipynb</code>). If you open a Part 2 or Part 3
@@ -2480,15 +2553,14 @@ notebook without having run Part 1 first, the <code>artifacts/</code> directory 
 <p><strong>Fix:</strong> Run <code>01_naive_rag.ipynb</code> from top to bottom before opening any later notebook.
 The final cells save:</p>
 <ul>
-<li><code>artifacts/faiss_index.bin</code> — the FAISS index</li>
-<li><code>artifacts/chunks.pkl</code> — the list of chunk strings</li>
-<li><code>artifacts/metadata.pkl</code> — the list of metadata dicts</li>
+<li><code>artifacts/faiss_index/index.bin</code> — the FAISS index</li>
+<li><code>artifacts/faiss_index/chunks.pkl</code> — the chunk list with metadata</li>
 </ul>
 <p>You only need to run Part 1 once. After that, Parts 2 and 3 can be run independently
 as many times as needed.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Verify the artifacts exist</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>ls<span class="w"> </span>-lh<span class="w"> </span>artifacts/
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Should show: faiss_index.bin, chunks.pkl, metadata.pkl</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Should show: faiss_index/ (containing index.bin and chunks.pkl)</span>
 </span></code></pre></div>
 <hr />
 <h2 id="jsonjsondecodeerror-grade_documents-parsing-failure"><code>json.JSONDecodeError</code> — grade_documents parsing failure<a class="headerlink" href="#jsonjsondecodeerror-grade_documents-parsing-failure" title="Permanent link">&para;</a></h2>
@@ -2687,15 +2759,15 @@ sufficient. The ArXiv API allows ~3 requests per second but returns 503 under lo
 </span></code></pre></div>
 <p><strong>Verify FAISS index is not empty:</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span><span class="o">,</span><span class="w"> </span><span class="nn">pickle</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">index</span> <span class="o">=</span> <span class="n">faiss</span><span class="o">.</span><span class="n">read_index</span><span class="p">(</span><span class="s2">&quot;artifacts/faiss_index.bin&quot;</span><span class="p">)</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index has </span><span class="si">{</span><span class="n">index</span><span class="o">.</span><span class="n">ntotal</span><span class="si">}</span><span class="s2"> vectors&quot;</span><span class="p">)</span>  <span class="c1"># should be 600</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;artifacts/chunks.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">index</span> <span class="o">=</span> <span class="n">faiss</span><span class="o">.</span><span class="n">read_index</span><span class="p">(</span><span class="s2">&quot;artifacts/faiss_index/index.bin&quot;</span><span class="p">)</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Index has </span><span class="si">{</span><span class="n">index</span><span class="o">.</span><span class="n">ntotal</span><span class="si">}</span><span class="s2"> vectors&quot;</span><span class="p">)</span>  <span class="c1"># should be &gt; 0</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;artifacts/faiss_index/chunks.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    <span class="n">chunks</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Chunks list has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span><span class="si">}</span><span class="s2"> entries&quot;</span><span class="p">)</span>  <span class="c1"># should match index.ntotal</span>
 </span></code></pre></div>
 <p><strong>Test Ollama embedding directly:</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">response</span> <span class="o">=</span> <span class="n">ollama</span><span class="o">.</span><span class="n">embeddings</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen3-embedding&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;test query&quot;</span><span class="p">)</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">response</span> <span class="o">=</span> <span class="n">ollama</span><span class="o">.</span><span class="n">embeddings</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;qwen3-embedding:0.6b&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;test query&quot;</span><span class="p">)</span>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;embedding&quot;</span><span class="p">]))</span>  <span class="c1"># should print 1024</span>
 </span></code></pre></div>
 <p><strong>Test Ollama generation directly:</strong></p>
@@ -2728,7 +2800,7 @@ sufficient. The ArXiv API allows ~3 requests per second but returns 503 under lo
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 19, 2026 09:24:33 UTC"><span class="timeago" datetime="2026-06-19T09:24:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 19, 2026 09:24:33 UTC">2026-06-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 16:30:15 UTC"><span class="timeago" datetime="2026-06-20T16:30:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 16:30:15 UTC">2026-06-20</span>
   </span>
 
     
@@ -2822,8 +2894,7 @@ sufficient. The ArXiv API allows ~3 requests per second but returns 503 under lo
   
 </div>
       
-        
-<div class="md-social">
+        <div class="md-social">
   
     
     
@@ -2833,7 +2904,7 @@ sufficient. The ArXiv API allows ~3 requests per second but returns 503 under lo
       
     
     <a href="https://github.com/pypi-ahmad" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -2850,11 +2921,10 @@ sufficient. The ArXiv API allows ~3 requests per second but returns 503 under lo
     
     
       
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

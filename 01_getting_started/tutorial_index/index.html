@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/01_getting_started/tutorial_index/">
       
       
-        <link rel="prev" href="../how_to_use/">
+        <link rel="prev" href="../learning_tracks/">
       
       
-        <link rel="next" href="../../02_core_concepts/what_is_rag/">
+        <link rel="next" href="../handbook_pdf/">
       
       
       <link rel="icon" href="https://raw.githubusercontent.com/google/material-design-icons/master/symbols/web/book/materialsymbolsoutlined/book_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg">
@@ -51,6 +51,10 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -393,7 +397,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../07_results/benchmark_table/" class="md-tabs__link">
+        <a href="../../07_results/recruiter_brief/" class="md-tabs__link">
           
   
   
@@ -413,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../08_reference/glossary/" class="md-tabs__link">
+        <a href="../../08_reference/claims_traceability/" class="md-tabs__link">
           
   
   
@@ -642,6 +646,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning_tracks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learning Tracks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -754,10 +781,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#validation-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Commands
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handbook_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full Tutorial PDF
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2077,6 +2136,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../07_results/recruiter_brief/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recruiter Brief
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../07_results/benchmark_table/" class="md-nav__link">
         
   
@@ -2190,6 +2272,29 @@
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08_reference/claims_traceability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Claims Traceability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2422,6 +2527,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#validation-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Commands
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2444,6 +2558,8 @@
 <h1 id="tutorial-index">Tutorial Index<a class="headerlink" href="#tutorial-index" title="Permanent link">&para;</a></h1>
 <p>This is the canonical index for the end-to-end tutorial track.</p>
 <p>Use this page to decide notebook order, dependencies, and where outputs are written.</p>
+<p>For guided routes, see <a href="../learning_tracks/">Learning Tracks</a>.
+For offline study, see <a href="../handbook_pdf/">Full Tutorial PDF</a>.</p>
 <h2 id="recommended-execution-order">Recommended Execution Order<a class="headerlink" href="#recommended-execution-order" title="Permanent link">&para;</a></h2>
 <ol>
 <li><code>notebooks/01_naive_rag.ipynb</code></li>
@@ -2549,6 +2665,11 @@
 <li>Keep 600-paper outputs as historical reference for scale comparison.</li>
 <li>Do not compare metrics across differently scoped eval settings without noting the scope.</li>
 </ul>
+<h2 id="validation-commands">Validation Commands<a class="headerlink" href="#validation-commands" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>scripts/check_docs_integrity.py
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>scripts/check_docs_facts.py
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>uv<span class="w"> </span>run<span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+</span></code></pre></div>
 
 
 
@@ -2571,7 +2692,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 16:30:15 UTC"><span class="timeago" datetime="2026-06-20T16:30:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 16:30:15 UTC">2026-06-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 17:06:03 UTC"><span class="timeago" datetime="2026-06-20T17:06:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 17:06:03 UTC">2026-06-20</span>
   </span>
 
     
@@ -2618,7 +2739,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../how_to_use/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to Use This Tutorial">
+          <a href="../learning_tracks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Learning Tracks">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2628,20 +2749,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                How to Use This Tutorial
+                Learning Tracks
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../02_core_concepts/what_is_rag/" class="md-footer__link md-footer__link--next" aria-label="Next: What Is RAG">
+          <a href="../handbook_pdf/" class="md-footer__link md-footer__link--next" aria-label="Next: Full Tutorial PDF">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                What Is RAG
+                Full Tutorial PDF
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2696,6 +2817,8 @@
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

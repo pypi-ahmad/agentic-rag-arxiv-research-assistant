@@ -52,6 +52,10 @@
       
     
     
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
       <link rel="stylesheet" href="../../css/timeago.css">
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
@@ -393,7 +397,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../07_results/benchmark_table/" class="md-tabs__link">
+        <a href="../../07_results/recruiter_brief/" class="md-tabs__link">
           
   
   
@@ -413,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../08_reference/glossary/" class="md-tabs__link">
+        <a href="../../08_reference/claims_traceability/" class="md-tabs__link">
           
   
   
@@ -703,6 +707,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#7-optional-build-full-tutorial-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) (Optional) Build full tutorial PDF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#minimal-smoke-test-cell" class="md-nav__link">
     <span class="md-ellipsis">
       Minimal smoke test cell
@@ -774,12 +787,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../learning_tracks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learning Tracks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorial_index/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Tutorial Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handbook_pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full Tutorial PDF
     
   </span>
   
@@ -2104,6 +2163,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../07_results/recruiter_brief/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recruiter Brief
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../07_results/benchmark_table/" class="md-nav__link">
         
   
@@ -2217,6 +2299,29 @@
             Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08_reference/claims_traceability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Claims Traceability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2444,6 +2549,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#7-optional-build-full-tutorial-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) (Optional) Build full tutorial PDF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#minimal-smoke-test-cell" class="md-nav__link">
     <span class="md-ellipsis">
       Minimal smoke test cell
@@ -2540,30 +2654,37 @@
 </span></code></pre></div>
 <p>Open <code>notebooks/01_naive_rag.ipynb</code> and select the <code>Agentic RAG</code> kernel.</p>
 <hr />
+<h2 id="7-optional-build-full-tutorial-pdf">7) (Optional) Build full tutorial PDF<a class="headerlink" href="#7-optional-build-full-tutorial-pdf" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>scripts/build_tutorial_pdf.py
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docs/assets/agentic-rag-full-tutorial.pdf
+</span></code></pre></div>
+<hr />
 <h2 id="minimal-smoke-test-cell">Minimal smoke test cell<a class="headerlink" href="#minimal-smoke-test-cell" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python:&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FAISS:&quot;</span><span class="p">,</span> <span class="n">faiss</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">model</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ollama</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="o">.</span><span class="n">models</span><span class="p">]</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Models:&quot;</span><span class="p">,</span> <span class="n">models</span><span class="p">)</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;qwen3-embedding&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">),</span> <span class="s2">&quot;Missing qwen3-embedding model&quot;</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;granite4.1:8b&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">),</span> <span class="s2">&quot;Missing granite4.1:8b model&quot;</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setup OK&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">faiss</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python:&quot;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FAISS:&quot;</span><span class="p">,</span> <span class="n">faiss</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">model</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ollama</span><span class="o">.</span><span class="n">list</span><span class="p">()</span><span class="o">.</span><span class="n">models</span><span class="p">]</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Models:&quot;</span><span class="p">,</span> <span class="n">models</span><span class="p">)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;qwen3-embedding&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">),</span> <span class="s2">&quot;Missing qwen3-embedding model&quot;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="k">assert</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;granite4.1:8b&quot;</span> <span class="ow">in</span> <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">),</span> <span class="s2">&quot;Missing granite4.1:8b model&quot;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setup OK&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <h2 id="repository-structure-high-level">Repository structure (high-level)<a class="headerlink" href="#repository-structure-high-level" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>agentic-rag-arxiv-research-assistant/
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── notebooks/                      # 01-09 tutorial notebooks
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>├── src/                            # shared pipeline modules + rag_v2 modules
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>├── artifacts/                      # metrics/results/indexes/traces
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>├── docs/                           # MkDocs tutorial documentation
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>├── requirements.txt
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>└── mkdocs.yml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>agentic-rag-arxiv-research-assistant/
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>├── notebooks/                      # 01-09 tutorial notebooks
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>├── src/                            # shared pipeline modules + rag_v2 modules
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>├── artifacts/                      # metrics/results/indexes/traces
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>├── docs/                           # MkDocs tutorial documentation
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>├── requirements.txt
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>└── mkdocs.yml
 </span></code></pre></div>
 <h3 id="committed-vs-generated-artifacts">Committed vs generated artifacts<a class="headerlink" href="#committed-vs-generated-artifacts" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2594,7 +2715,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 16:30:15 UTC"><span class="timeago" datetime="2026-06-20T16:30:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 16:30:15 UTC">2026-06-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 20, 2026 17:06:03 UTC"><span class="timeago" datetime="2026-06-20T17:06:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 20, 2026 17:06:03 UTC">2026-06-20</span>
   </span>
 
     
@@ -2719,6 +2840,8 @@
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

@@ -1,0 +1,15 @@
+{
+  "experiment_name": "agentic_rag_4000",
+  "retriever_type": "crag_langgraph",
+  "embed_model": "qwen3-embedding:0.6b",
+  "llm_model": "granite4.1:8b",
+  "retrieval_metrics": {
+    "recall@5": 0.0,
+    "mrr": 0.0
+  },
+  "generation_metrics": {
+    "faithfulness_rate": 0.8,
+    "web_search_rate": 0.8
+  },
+  "notes": "4,000-paper baseline with CRAG (legacy 600 preserved separately)"
+}

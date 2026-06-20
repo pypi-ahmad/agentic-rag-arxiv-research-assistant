@@ -2,7 +2,7 @@ site_name: Agentic RAG — Zero to Hero
 site_description: >-
   A complete tutorial on Retrieval-Augmented Generation (RAG) —
   from first principles to a production-grade agentic pipeline with LangGraph,
-  applied to 2 000 ArXiv ML/AI research papers. Fully local, no cloud APIs required.
+  applied to a 4,000-paper ArXiv ML/AI baseline (with preserved 600-paper legacy results).
 site_author: Ahmad (pypi-ahmad)
 site_url: https://pypi-ahmad.github.io/agentic-rag-arxiv-research-assistant/
 
@@ -94,6 +94,22 @@ nav:
     - Grading Threshold Improvement: 05_part3_agentic_rag/threshold_improvement.md
     - Evaluation: 05_part3_agentic_rag/evaluation.md
     - Results & Limitations: 05_part3_agentic_rag/results_and_limits.md
+
+  - Part 4 — Graph RAG:
+    - Overview: 06_part4_graph_rag/overview.md
+    - GraphRAG on ChromaDB: 06_part4_graph_rag/chromadb_graphrag.md
+    - GraphRAG on Pinecone: 06_part4_graph_rag/pinecone_graphrag.md
+    - Agentic GraphRAG: 06_part4_graph_rag/agentic_graphrag.md
+    - Evaluation: 06_part4_graph_rag/evaluation.md
+    - Results & Limitations: 06_part4_graph_rag/results_and_limits.md
+
+  - Part 5 — New Techniques:
+    - Overview: 09_part5_new_techniques/overview.md
+    - Hybrid RAG: 09_part5_new_techniques/hybrid_rag.md
+    - GraphRAG: 09_part5_new_techniques/graphrag.md
+    - Agentic RAG: 09_part5_new_techniques/agentic_rag.md
+    - Corrective RAG (CRAG): 09_part5_new_techniques/crag.md
+    - Multimodal RAG: 09_part5_new_techniques/multimodal_rag.md
 
   - Results & Improvements:
     - Full Benchmark Table: 07_results/benchmark_table.md

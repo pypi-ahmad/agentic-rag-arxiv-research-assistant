@@ -1,0 +1,3 @@
+artifacts/chromadb/**/data_level0.bin filter=lfs diff=lfs merge=lfs -text
+artifacts/chromadb/chroma.sqlite3 filter=lfs diff=lfs merge=lfs -text
+artifacts/graph/chunk_embeddings.npy filter=lfs diff=lfs merge=lfs -text

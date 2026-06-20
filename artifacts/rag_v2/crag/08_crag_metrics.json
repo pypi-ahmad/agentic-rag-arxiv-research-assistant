@@ -1,0 +1,98 @@
+{
+  "summary": {
+    "n_questions": 6,
+    "rewrite_rate": 0.8333,
+    "rewrite_improvement_rate": 0.8333,
+    "faithfulness_mean": 0.0,
+    "llm_evaluated_rows": 1,
+    "latency_p50_ms": 353.28,
+    "latency_p95_ms": 28985.8,
+    "adapter_mode_active": false
+  },
+  "runs": [
+    {
+      "question": "How does RLHF work?",
+      "used_rewrite": true,
+      "rewritten_query": "What is the process behind Reinforcement Learning from Human Feedback (RLHF)?",
+      "initial_grade": "irrelevant",
+      "initial_conf": 0.0,
+      "final_grade": "irrelevant",
+      "final_conf": 0.0,
+      "improved": true,
+      "faithfulness": 0.0,
+      "faith_reason": "The context does not mention RLHF, so the answer is not supported.",
+      "llm_evaluated": true,
+      "latency_ms": 38525.508924998576
+    },
+    {
+      "question": "What is LoRA and why is it useful?",
+      "used_rewrite": true,
+      "rewritten_query": "What is LoRA and why is it useful? definition mechanism method benchmark",
+      "initial_grade": "irrelevant",
+      "initial_conf": 0.0,
+      "final_grade": "irrelevant",
+      "final_conf": 0.0,
+      "improved": true,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 366.6640559968073
+    },
+    {
+      "question": "How does retrieval-augmented generation work?",
+      "used_rewrite": true,
+      "rewritten_query": "How does retrieval-augmented generation work? definition mechanism method benchmark",
+      "initial_grade": "irrelevant",
+      "initial_conf": 0.0,
+      "final_grade": "irrelevant",
+      "final_conf": 0.0,
+      "improved": true,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 362.5062990031438
+    },
+    {
+      "question": "What are mixture-of-experts models?",
+      "used_rewrite": true,
+      "rewritten_query": "What are mixture-of-experts models? definition mechanism method benchmark",
+      "initial_grade": "partially_relevant",
+      "initial_conf": 0.333,
+      "final_grade": "partially_relevant",
+      "final_conf": 0.333,
+      "improved": true,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 344.04778700263705
+    },
+    {
+      "question": "What is flash attention?",
+      "used_rewrite": true,
+      "rewritten_query": "What is flash attention? definition mechanism method benchmark",
+      "initial_grade": "partially_relevant",
+      "initial_conf": 0.333,
+      "final_grade": "partially_relevant",
+      "final_conf": 0.333,
+      "improved": true,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 331.0979359957855
+    },
+    {
+      "question": "How are diffusion models trained?",
+      "used_rewrite": false,
+      "rewritten_query": "How are diffusion models trained?",
+      "initial_grade": "relevant",
+      "initial_conf": 0.667,
+      "final_grade": "relevant",
+      "final_conf": 0.667,
+      "improved": false,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 164.175185993372
+    }
+  ]
+}

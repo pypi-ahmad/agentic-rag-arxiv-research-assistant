@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "n_pdfs": 2,
+    "n_docs": 2,
+    "ocr_avg_chars": 2776.0,
+    "vision_avg_chars": 0.0,
+    "faithfulness_mean": 1.0,
+    "llm_evaluated_rows": 1,
+    "latency_p50_ms": 22476.63,
+    "latency_p95_ms": 23847.47
+  },
+  "records": [
+    {
+      "arxiv_id": "1706.03762",
+      "pdf_path": "/home/ahmad/AI/Github/agentic-rag-arxiv-research-assistant/artifacts/rag_v2/multimodal/pdfs/1706.03762.pdf",
+      "image_path": "/home/ahmad/AI/Github/agentic-rag-arxiv-research-assistant/artifacts/rag_v2/multimodal/images/1706.03762_p1.png"
+    },
+    {
+      "arxiv_id": "2005.14165",
+      "pdf_path": "/home/ahmad/AI/Github/agentic-rag-arxiv-research-assistant/artifacts/rag_v2/multimodal/pdfs/2005.14165.pdf",
+      "image_path": "/home/ahmad/AI/Github/agentic-rag-arxiv-research-assistant/artifacts/rag_v2/multimodal/images/2005.14165_p1.png"
+    }
+  ],
+  "eval": [
+    {
+      "question": "What is the main contribution of the Transformer paper?",
+      "sources": "ocr",
+      "faithfulness": 1.0,
+      "latency_ms": 23999.79,
+      "reason": "The context explicitly states that the paper 'Attention Is All You Need' introduces the Transformer architecture, which is the main contribution.",
+      "llm_evaluated": true
+    },
+    {
+      "question": "What does the GPT-3 paper emphasize about model scale?",
+      "sources": "ocr",
+      "faithfulness": null,
+      "latency_ms": 20953.47,
+      "reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false
+    }
+  ]
+}

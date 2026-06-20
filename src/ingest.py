@@ -40,6 +40,11 @@ from tqdm import tqdm
 import ollama
 
 
+# Timeout-enabled Ollama client to prevent indefinite hangs during long runs.
+# 300s is intentionally generous for larger batch requests.
+OLLAMA_CLIENT = ollama.Client(timeout=300.0)
+
+
 # ── Constants (override per notebook if needed) ───────────────────────────────
 
 # Ollama embedding model names.
@@ -341,7 +346,21 @@ def embed_texts(
 
     for i in tqdm(range(0, len(texts), batch_size), desc=f"Embedding ({model})"):
         batch = texts[i : i + batch_size]
-        response = ollama.embed(model=model, input=batch)
+        response = None
+        max_retries = 3
+        for attempt in range(1, max_retries + 1):
+            try:
+                response = OLLAMA_CLIENT.embed(model=model, input=batch)
+                break
+            except Exception as exc:
+                logger.warning(
+                    f"Ollama embed failed (attempt {attempt}/{max_retries}) for batch "
+                    f"{i//batch_size + 1}: {exc}"
+                )
+                if attempt == max_retries:
+                    raise
+                time.sleep(1.5 * attempt)
+
         all_embeddings.extend(response["embeddings"])
 
     embeddings = np.array(all_embeddings, dtype=np.float32)
@@ -484,7 +503,19 @@ def embed_query(query: str, model: str = EMBED_MODEL_LITE) -> np.ndarray:
     Returns:
         Float32 array of shape (1, embedding_dim), L2-normalised.
     """
-    response = ollama.embed(model=model, input=[query])
+    response = None
+    max_retries = 3
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = OLLAMA_CLIENT.embed(model=model, input=[query])
+            break
+        except Exception as exc:
+            logger.warning(
+                f"Ollama query embedding failed (attempt {attempt}/{max_retries}): {exc}"
+            )
+            if attempt == max_retries:
+                raise
+            time.sleep(1.0 * attempt)
     vec = np.array(response["embeddings"][0], dtype=np.float32)
     vec = vec / np.maximum(np.linalg.norm(vec), 1e-10)
     return vec.reshape(1, -1)

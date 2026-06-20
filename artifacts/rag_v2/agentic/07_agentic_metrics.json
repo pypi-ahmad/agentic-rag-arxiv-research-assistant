@@ -1,0 +1,73 @@
+{
+  "route_stats": {
+    "hybrid": 6
+  },
+  "quality": {
+    "faithfulness_mean": 1.0,
+    "llm_evaluated_rows": 1,
+    "latency_p50_ms": 167.89,
+    "latency_p95_ms": 20352.27
+  },
+  "runs": [
+    {
+      "question": "How does RLHF work?",
+      "route": "hybrid",
+      "retrieval_grade": "irrelevant",
+      "retrieval_conf": 0.0,
+      "faithfulness": 1.0,
+      "faith_reason": "The context does not mention RLHF, so the answer correctly states that it is insufficient to explain how RLHF works.",
+      "llm_evaluated": true,
+      "latency_ms": 27077.174284997454
+    },
+    {
+      "question": "What is LoRA and why is it useful?",
+      "route": "hybrid",
+      "retrieval_grade": "irrelevant",
+      "retrieval_conf": 0.0,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 172.64419099956285
+    },
+    {
+      "question": "How does retrieval-augmented generation work?",
+      "route": "hybrid",
+      "retrieval_grade": "irrelevant",
+      "retrieval_conf": 0.0,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 177.57061999873258
+    },
+    {
+      "question": "What are mixture-of-experts models?",
+      "route": "hybrid",
+      "retrieval_grade": "partially_relevant",
+      "retrieval_conf": 0.333,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 161.8625770061044
+    },
+    {
+      "question": "What is flash attention?",
+      "route": "hybrid",
+      "retrieval_grade": "partially_relevant",
+      "retrieval_conf": 0.333,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 146.18777500436408
+    },
+    {
+      "question": "How are diffusion models trained?",
+      "route": "hybrid",
+      "retrieval_grade": "relevant",
+      "retrieval_conf": 0.667,
+      "faithfulness": null,
+      "faith_reason": "not_evaluated_in_light_mode",
+      "llm_evaluated": false,
+      "latency_ms": 163.14316599891754
+    }
+  ]
+}

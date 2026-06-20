@@ -150,7 +150,8 @@ class ChromaVectorStore(VectorStore):
         result = self._collection.query(
             query_embeddings=[query_vec],
             n_results=min(k, self.count()),
-            include=["ids", "documents", "metadatas", "distances"],
+            # `ids` are returned by default in ChromaDB query responses.
+            include=["documents", "metadatas", "distances"],
         )
 
         chunks = []

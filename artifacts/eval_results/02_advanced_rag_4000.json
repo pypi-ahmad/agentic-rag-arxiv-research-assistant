@@ -1,0 +1,13 @@
+{
+  "experiment_name": "advanced_rag",
+  "retriever_type": "hybrid_reranked",
+  "embed_model": "qwen3-embedding:0.6b",
+  "llm_model": "granite4.1:8b",
+  "retrieval_metrics": {
+    "recall@5": 0.05,
+    "precision@5": 0.01,
+    "mrr": 0.0167
+  },
+  "generation_metrics": {},
+  "notes": "Hybrid alpha=0.7 + cross-encoder/ms-marco-MiniLM-L-6-v2 (retrieve-20, rerank-to-5)"
+}

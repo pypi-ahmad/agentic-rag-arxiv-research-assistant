@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.ingest import (
     EMBED_MODEL_LITE,
-    load_arxiv_papers,
+    load_hf_papers,
     chunk_documents,
     embed_texts,
     build_faiss_index,
@@ -65,7 +65,7 @@ SAMPLE_QUERIES = [
 ]
 
 
-def phase1_ingest(n_papers: int = 500) -> tuple:
+def phase1_ingest(n_papers: int = 4000) -> tuple:
     """Load, chunk, embed, index and save. Returns (index, chunks)."""
     print("\n" + "=" * 60)
     print("PHASE 1 — Ingestion Pipeline")
@@ -74,7 +74,7 @@ def phase1_ingest(n_papers: int = 500) -> tuple:
     t0 = time.time()
 
     # 1. Load
-    papers = load_arxiv_papers(n_samples=n_papers)
+    papers = load_hf_papers(n_samples=n_papers, ml_filter=True)
     print(f"\n[1/4] Loaded {len(papers)} papers")
     print(f"      Sample: {papers[0]['title'][:70]}...")
 
@@ -232,7 +232,7 @@ def phase4_evaluate(query: str, answer: str, retrieved: list[dict], chunks: list
             "answer_relevance": rel_score,
         },
     )
-    out_path = ARTIFACTS_DIR.parent / "eval_results.json"
+    out_path = ARTIFACTS_DIR.parent / "eval_results_pipeline_4000.json"
     results.save(out_path)
     print(f"\n  Results saved to {out_path}")
     print(f"\n  Summary:\n{results.summary()}")
@@ -247,7 +247,7 @@ def main() -> None:
     print(f"  LLM model       : {LLM_MODEL}")
     print(f"  Artifacts dir   : {ARTIFACTS_DIR}")
 
-    index, chunks = phase1_ingest(n_papers=500)
+    index, chunks = phase1_ingest(n_papers=4000)
     phase2_retrieval(index, chunks)
     query, answer, retrieved = phase3_generate(index, chunks)
     phase4_evaluate(query, answer, retrieved, chunks)

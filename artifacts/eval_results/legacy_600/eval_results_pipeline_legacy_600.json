@@ -1,0 +1,17 @@
+{
+  "experiment_name": "run_01_naive_rag",
+  "retriever_type": "hybrid",
+  "embed_model": "qwen3-embedding:0.6b",
+  "llm_model": "granite4.1:8b",
+  "retrieval_metrics": {
+    "Recall@1": 1.0,
+    "Recall@5": 1.0,
+    "Precision@5": 0.2,
+    "MRR": 1.0
+  },
+  "generation_metrics": {
+    "faithfulness": 0.0,
+    "answer_relevance": 0.5
+  },
+  "notes": ""
+}

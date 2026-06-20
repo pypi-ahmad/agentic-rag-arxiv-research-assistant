@@ -1,6 +1,6 @@
 # ── Ollama Python client ─────────────────────────────────────────────────────
 # Talks to the local Ollama server; used for embeddings and LLM generation
-ollama==0.4.7
+ollama==0.4.8
 
 # ── LangChain ecosystem ───────────────────────────────────────────────────────
 # Core abstractions (chains, prompts, document loaders)
@@ -30,6 +30,7 @@ sentence-transformers==4.1.0
 # Downloads ccdv/arxiv-summarization from the Hub
 datasets==3.6.0
 huggingface-hub==0.31.4
+arxiv==2.2.0
 
 # ── Numerical / data stack ────────────────────────────────────────────────────
 numpy==2.2.6

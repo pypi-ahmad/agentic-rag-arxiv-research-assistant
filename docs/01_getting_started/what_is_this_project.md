@@ -36,7 +36,9 @@ This tutorial builds both phases, from scratch, step by step.
 
 ## Why ArXiv ML/AI papers?
 
-The corpus for this project is 600 recent ArXiv paper abstracts from three categories: `cs.CL` (computation and language), `cs.AI` (artificial intelligence), and `cs.LG` (machine learning).
+The current baseline corpus is 4,000 ArXiv ML/AI paper abstracts from HuggingFace
+(`ccdv/arxiv-summarization`, ML-filtered). Historical 600-paper runs are preserved as
+legacy comparison artifacts.
 
 This is an unusual choice for a tutorial — most use Wikipedia articles or random web pages. Here's why ArXiv ML papers are better for learning RAG:
 
@@ -50,9 +52,10 @@ This is an unusual choice for a tutorial — most use Wikipedia articles or rand
 
 ---
 
-## The progression: Naive → Advanced → Agentic
+## The progression: Naive → Advanced → Agentic → GraphRAG
 
-This tutorial is structured as three progressively more capable systems. Each one fixes the failures of the previous one.
+This tutorial is structured as four progressively more capable systems.
+Each one fixes the failures of the previous one.
 
 ### Part 1 — Naive RAG: The baseline
 
@@ -81,6 +84,13 @@ Part 3 adds intelligence on top of the Advanced RAG retriever. Instead of blindl
 
 This is the CRAG architecture (Corrective RAG, Yan et al. 2024), implemented as a LangGraph state machine with 5 nodes and conditional routing. The result: 7 out of 10 answers are faithful to the retrieved context, and web search is triggered 0 times out of 10 — meaning the corpus is almost always sufficient.
 
+### Part 4 — GraphRAG: Structured retrieval at scale
+
+Part 4 adds entity extraction, knowledge-graph construction, community detection, and
+dual backend execution (ChromaDB + Pinecone), then wraps GraphRAG in an agentic LangGraph
+loop. This introduces multi-hop and community-level retrieval strategies that are harder
+to express in a pure chunk-similarity pipeline.
+
 ---
 
 ## What makes this tutorial different?
@@ -89,8 +99,10 @@ Most RAG tutorials show you *how to build* the pipeline but not *how well it wor
 
 This tutorial does things differently:
 
-- **Every step is measured.** Retrieval quality is evaluated with a 20-query benchmark using MRR, Recall@5, and Precision@5. You see the actual numbers change as each improvement is added.
-- **The eval is honest.** Early runs used an inflated 5-query benchmark that produced MRR = 0.67. That benchmark was replaced with a harder 20-query set, which dropped the baseline to MRR = 0.299. Lower numbers on a harder benchmark is the more useful result.
+- **Every step is measured.** Retrieval quality is evaluated with benchmarked metrics and
+  persisted JSON artifacts at both legacy 600 and current 4,000 scale.
+- **The eval is honest.** Legacy 600 numbers are kept visible, and current 4,000 numbers
+  are reported side-by-side so readers can compare scaling effects directly.
 - **Failures are explained.** When hybrid search with alpha-blending doesn't beat BM25 alone, the tutorial explains why rather than hiding the result.
 - **Everything is local.** No OpenAI API key, no Pinecone subscription, no cloud GPU. If you have a 6+ GB VRAM GPU and Ollama installed, you can run everything for free.
 

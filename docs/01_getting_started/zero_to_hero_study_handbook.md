@@ -107,11 +107,11 @@ src/ingest.py
 ```
 
 Important implementation note (dimension consistency):
-1. `src/ingest.py` comment says `EMBED_MODEL_PRIMARY = "qwen3-embedding:4b"` produces "4096-dim" vectors.
+1. Canonical contract: `qwen3-embedding:4b` is treated as 2560-dim in this repository.
 2. `src/rag_v2/retrieval.py` maps `2560` to `qwen3-embedding:4b` in `EMBED_MODEL_DIM_TO_NAME`.
 3. `src/vectorstore.py` defaults Pinecone `dimension=2560`.
 
-A new contributor should treat embedding dimension as a runtime contract that must match the index/store used in that workflow.
+A contributor should treat embedding dimension as a runtime contract that must match the index/store used in that workflow.
 
 ## Module 2: Repository Map
 
@@ -140,7 +140,7 @@ The table below focuses on the first files a contributor should master.
 | `notebooks/01_naive_rag.ipynb` | Part 1: corpus build, dense retrieval baseline | defines `naive_rag` in notebook | `EMBED_MODEL`, `RUN_EMBED_MODEL_COMPARISON`, `RAG_PROMPT` |
 | `notebooks/02_advanced_rag.ipynb` | Part 2: BM25 + hybrid + rerank experiments | notebook flow using `src/retriever.py` | eval artifacts in `artifacts/eval_results/` |
 | `notebooks/03_agentic_rag_langgraph.ipynb` | Part 3: LangGraph CRAG state-machine | `retrieve`, `grade_documents`, `web_search`, `generate_answer`, `grade_hallucination`, `run_agent` | `GraphState`, `MAX_REGENERATIONS=2`, `TRACE_DIR` |
-| `notebooks/04_graph_rag.ipynb` | Part 4: GraphRAG with Chroma/Pinecone and agentic graph | `local_search`, `global_search`, `retrieve_node`, `global_retrieve_node`, `grade_node`, `web_search_node`, `generate_node`, `grade_hallucination_node` | `GraphRAGState`, `EMBED_MODEL='qwen3-embedding:4b'`, `LLM_MODEL`, `GUARDIAN_MODEL` |
+| `notebooks/04_graph_rag.ipynb` | Part 4: GraphRAG with Chroma/Pinecone and agentic graph | `local_search`, `global_search`, `retrieve_node`, `global_retrieve_node`, `grade_node`, `web_search_node`, `generate_node`, `grade_hallucination_node` | `GraphRAGState`, `EMBED_MODEL='qwen3-embedding:4b'`, `LLM_MODEL`, `JUDGE_MODEL`, `JUDGE_FALLBACK_MODEL` |
 | `notebooks/05_hybrid_rag.ipynb` | Part 5A: Hybrid RAG with `src/rag_v2` modules | notebook orchestration | output `artifacts/rag_v2/hybrid/05_hybrid_metrics.json` |
 | `notebooks/06_graphrag.ipynb` | Part 5B: GraphRAG with `src/rag_v2/graph.py` | notebook orchestration | output `artifacts/rag_v2/graphrag/06_graphrag_metrics.json` |
 | `notebooks/07_agentic_rag.ipynb` | Part 5C: Agentic routing with `src/rag_v2/agentic.py` | `graph_retrieve`, `cheap_relevance_grade`, `run_agent` | output `artifacts/rag_v2/agentic/07_agentic_metrics.json` |

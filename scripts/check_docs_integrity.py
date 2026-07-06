@@ -21,7 +21,7 @@ STALE_PATTERNS: dict[str, str] = {
     r"artifacts/faiss_index\.bin": "Deprecated FAISS path. Use artifacts/faiss_index/index.bin.",
     r"artifacts/chunks\.pkl": "Deprecated chunk path. Use artifacts/faiss_index/chunks.pkl.",
     r"artifacts/eval/": "Deprecated eval path. Use artifacts/eval_results/.",
-    r"granite4\.1-guardian": "Deprecated model in docs. Use granite4.1:8b for judge path.",
+    r"granite4\.1-guardian": "Deprecated model in docs. Use granite4.1:3b for NB04 judge path.",
 }
 
 # Runtime-generated files that may be absent in clean clones.
@@ -29,6 +29,8 @@ OPTIONAL_PATH_PREFIXES: tuple[str, ...] = (
     "artifacts/eval_results/04_chromadb_graphrag_4000.json",
     "artifacts/eval_results/04_pinecone_graphrag_4000.json",
     "artifacts/eval_results/04_agent_graphrag_4000.json",
+    "artifacts/graph/community_summaries.json",
+    "artifacts/eval_results_pipeline_4000.json",
 )
 
 CODE_PAT = re.compile(r"`([^`\n]+)`")
@@ -42,6 +44,17 @@ ROOT_PATH_PREFIXES: tuple[str, ...] = (
     "artifacts/",
 )
 ROOT_FILES: tuple[str, ...] = ("README.md", "mkdocs.yml", "requirements.txt")
+PATH_EXTENSIONS: tuple[str, ...] = (
+    ".md",
+    ".ipynb",
+    ".json",
+    ".pkl",
+    ".bin",
+    ".png",
+    ".py",
+    ".yml",
+    ".txt",
+)
 
 
 def markdown_files() -> list[Path]:
@@ -57,23 +70,25 @@ def is_path_like(token: str) -> bool:
         return True
     if not SAFE_PATH_TOKEN.match(token):
         return False
+    if token.startswith("."):
+        return False
+    if token.startswith("notebooks/") and not token.endswith(".ipynb"):
+        return False
+    if token.startswith("src/"):
+        leaf = token.rsplit("/", maxsplit=1)[-1]
+        if "." in leaf and not leaf.endswith(PATH_EXTENSIONS):
+            return False
     if token.startswith(ROOT_PATH_PREFIXES) or token in ROOT_FILES:
         return True
     if "/" in token:
         return False
+    # Bare filenames are noisy in narrative docs (e.g., `index.bin` examples).
+    # We only treat local markdown references as path-like.
+    if token.endswith(".md"):
+        return True
     if any(ch.isalpha() for ch in token) is False:
         return False
-    return token.endswith((
-        ".md",
-        ".ipynb",
-        ".json",
-        ".pkl",
-        ".bin",
-        ".png",
-        ".py",
-        ".yml",
-        ".txt",
-    ))
+    return False
 
 
 def normalize_token(token: str) -> str:

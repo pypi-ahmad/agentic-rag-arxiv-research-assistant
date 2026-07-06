@@ -48,7 +48,7 @@ OLLAMA_CLIENT = ollama.Client(timeout=300.0)
 # ── Constants (override per notebook if needed) ───────────────────────────────
 
 # Ollama embedding model names.
-# LITE is faster (~60s for 500 docs); PRIMARY produces richer 4096-dim vectors.
+# LITE is faster (~60s for 500 docs); PRIMARY produces richer 2560-dim vectors.
 # Notebooks 01-02 default to LITE; swap to PRIMARY for the best quality run.
 EMBED_MODEL_PRIMARY = "qwen3-embedding:4b"
 EMBED_MODEL_LITE = "qwen3-embedding:0.6b"

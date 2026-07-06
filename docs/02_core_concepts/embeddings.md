@@ -144,15 +144,15 @@ Our project defines two embedding models:
 
 ```python
 # src/ingest.py
-EMBED_MODEL_PRIMARY = "qwen3-embedding:4b"   # 4096-dim — high quality
+EMBED_MODEL_PRIMARY = "qwen3-embedding:4b"   # 2560-dim — high quality
 EMBED_MODEL_LITE    = "qwen3-embedding:0.6b" # 1024-dim — fast
 ```
 
 | Property | `qwen3-embedding:0.6b` | `qwen3-embedding:4b` |
 |---|---|---|
-| Dimensions | 1024 | 4096 |
+| Dimensions | 1024 | 2560 |
 | Model parameters | ~0.6 billion | ~4 billion |
-| FAISS index size (600 docs) | ~10 MB | ~40 MB |
+| FAISS index size (600 docs) | ~10 MB | ~25 MB |
 | Embedding speed | ~60 s for 500 docs | ~5 min for 500 docs |
 | Retrieval quality | Good | Excellent |
 | RAM required | ~1 GB | ~5 GB |

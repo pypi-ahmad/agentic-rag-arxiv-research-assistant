@@ -5,7 +5,7 @@
 **Evidence baseline used**
 - Source modules: `src/*.py`, `src/rag_v2/*.py`
 - Operational scripts: `scripts/*.py`
-- Tutorial notebooks: `notebooks/01` through `notebooks/09` (`.ipynb`, not executed in this handbook)
+- Tutorial notebooks: `notebooks/01_naive_rag.ipynb` through `notebooks/09_multimodal_rag.ipynb` (not executed in this handbook)
 - Documentation + config: `docs/**/*.md`, `mkdocs.yml`, `README.md`, `requirements.txt`
 - Artifacts reviewed for real output schemas: `artifacts/**/*.json`, plus generated/static outputs under `site/`
 
@@ -123,16 +123,13 @@ embed_texts(model=qwen3-embedding:0.6b or 4b, batch_size=32)
 **Core models (Ollama)**
 - Embedding:
   - `qwen3-embedding:0.6b` (default light path; mapped as 1024-dim in `src/rag_v2/retrieval.py`)
-  - `qwen3-embedding:4b` has conflicting dimension assumptions in-repo:
-    - `src/ingest.py` comment says: `PRIMARY produces richer 4096-dim vectors`.
-    - `src/rag_v2/retrieval.py` maps `2560 -> "qwen3-embedding:4b"`.
-    - `src/vectorstore.py` defaults Pinecone `dimension=2560` and docstring says `(2560 for qwen3-embedding:4b)`.
-  - Practical implication for this codebase: dimension is not single-sourced in static code; index dimension must match actual embedding output used at build time.
+  - `qwen3-embedding:4b` canonical contract: 2560-dim vectors.
+  - Practical implication for this codebase: index/store dimension must match the runtime embedding output.
 - Generation/Judging: `granite4.1:8b`
 - Optional/extended:
   - `qwen3.5:4b` (NB09 answer/vision usage)
   - `glm-ocr` (NB09 OCR via `ollama run glm-ocr`)
-  - `granite4.1-guardian:8b` (NB04 optional guardian; fallback to `granite4.1:8b`)
+  - `granite4.1:3b` (NB04 default judge model; fallback to `granite4.1:8b`)
 
 **Vector search and stores**
 - FAISS (`faiss-cpu==1.11.0`)
@@ -419,7 +416,7 @@ Repository scope counts used for this module:
 | notebooks/02_advanced_rag.ipynb | Part 2 — Advanced RAG: Hybrid Search + Cross-Encoder Reranking | defs: find_relevant_ids_by_keywords; imports: import sys; from pathlib import Path; import numpy as np; import pandas as pd | constants: CWD, PROJECT_ROOT, ARTIFACTS_DIR, INDEX_DIR, EVAL_DIR, EMBED_MODEL, OLD_RESULTS |
 | notebooks/03_agentic_rag_langgraph.executed.ipynb | Part 3 — Agentic RAG with LangGraph: CRAG State Machine | defs: retrieve, grade_documents, web_search, generate_answer, grade_hallucination, route_after_grading, route_after_hallucination_check, run_agent, find_relevant_ids_by_keywords; imports: import sys; from pathlib import Path; import json; import time | constants: CWD, PROJECT_ROOT, ARTIFACTS_DIR, INDEX_DIR, EVAL_DIR, TRACE_DIR, EMBED_MODEL, LLM_MODEL, GRADING_PROMPT, GENERATION_PROMPT, HALLUCINATION_PROMPT, MAX_REGENERATIONS |
 | notebooks/03_agentic_rag_langgraph.ipynb | Part 3 — Agentic RAG with LangGraph: CRAG State Machine | defs: retrieve, grade_documents, web_search, generate_answer, grade_hallucination, route_after_grading, route_after_hallucination_check, run_agent, find_relevant_ids_by_keywords; imports: import sys; from pathlib import Path; import json; import time | constants: CWD, PROJECT_ROOT, ARTIFACTS_DIR, INDEX_DIR, EVAL_DIR, TRACE_DIR, EMBED_MODEL, LLM_MODEL, GRADING_PROMPT, GENERATION_PROMPT, HALLUCINATION_PROMPT, MAX_REGENERATIONS |
-| notebooks/04_graph_rag.ipynb | Part 4 — Graph RAG: ChromaDB · Pinecone · Agentic LangGraph | defs: local_search, global_search, _find_ids, ndcg_at_k, f1_at_k, mrr, compute_retrieval_metrics, _normalise, exact_match, bleu; imports: import subprocess, sys; import nltk; import json, os, pickle, sys, re; from pathlib import Path | constants: CWD, PROJECT_ROOT, EMBED_MODEL, LLM_MODEL, GUARDIAN_MODEL, EMBED_DIM, ARTIFACTS, GRAPH_DIR, CHROMA_DIR, EVAL_DIR, NPY_PATH, CHUNKS_PATH, GRAPH_PATH, G |
+| notebooks/04_graph_rag.ipynb | Part 4 — Graph RAG: ChromaDB · Pinecone · Agentic LangGraph | defs: local_search, global_search, _find_ids, ndcg_at_k, f1_at_k, mrr, compute_retrieval_metrics, _normalise, exact_match, bleu; imports: import subprocess, sys; import nltk; import json, os, pickle, sys, re; from pathlib import Path | constants: CWD, PROJECT_ROOT, EMBED_MODEL, LLM_MODEL, JUDGE_MODEL, JUDGE_FALLBACK_MODEL, EMBED_DIM, ARTIFACTS, GRAPH_DIR, CHROMA_DIR, EVAL_DIR, NPY_PATH, CHUNKS_PATH, GRAPH_PATH, G |
 | notebooks/05_hybrid_rag.executed.ipynb | Part 5A — Hybrid RAG (Notebook 05) | imports: from __future__ import annotations; import sys; import time; from pathlib import Path | constants: PROJECT_ROOT, ART |
 | notebooks/05_hybrid_rag.ipynb | Part 5A — Hybrid RAG (Notebook 05) | imports: from __future__ import annotations; import sys; import time; from pathlib import Path | constants: PROJECT_ROOT, ART |
 | notebooks/06_graphrag.executed.ipynb | Part 5B — GraphRAG (Notebook 06) | defs: __init__, retrieve; imports: from __future__ import annotations; import sys; import time; from pathlib import Path | constants: PROJECT_ROOT, ART |
@@ -813,7 +810,7 @@ uv run python scripts/build_tutorial_pdf.py
 ### 5.1 Five Core Technical Interview Questions
 
 1. Why does this repository keep both dense retrieval and BM25 instead of choosing one retriever globally?
-2. In `src/retriever.HybridRetriever`, what tradeoff is being made between alpha fusion and RRF, and why does `rrf_k=60` matter?
+2. In `src/retriever.py::HybridRetriever`, what tradeoff is being made between alpha fusion and RRF, and why does `rrf_k=60` matter?
 3. Explain how state/memory is managed in the agentic paths (NB03 LangGraph and `src/rag_v2/agentic.py`) and where determinism is intentionally reduced.
 4. Why does `src/graph_builder.py` run community detection on the entity subgraph rather than the full paper+entity graph?
 5. What are the deployment implications of using `ChromaVectorStore` vs `PineconeVectorStore` in this codebase, based on actual constructor and batch settings?

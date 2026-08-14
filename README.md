@@ -126,3 +126,5 @@ uv run python scripts/check_docs_integrity.py
 uv run python scripts/check_docs_facts.py
 uv run mkdocs build --strict
 ```
+
+<p align="center">Made with ❤️ by Ahmad Mujtaba</p>
